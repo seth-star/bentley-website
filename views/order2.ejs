@@ -1,0 +1,75 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Booking(s)</title>
+  <link rel="stylesheet" href="/styles/order.css">
+</head>
+<body>
+  <header class="header">
+    <div class="left">
+      
+    </div>
+    <div class="center">
+      <div class="container2">
+        <p class="welcome">
+          Thanks for booking at 
+        </p>
+       <a href="/bentley/"><img src="/images/logos/Bentley's logo2.jpg" class="logo"></a> 
+      </div>
+    </div>
+    <div class="right"></div>
+ </header>
+  
+  <div class="main"> 
+    <div class="section1 ">
+     <% if(orders.length > 0){ %> 
+      <% orders.forEach((order2)=>{ %>
+        <div class="head-section">
+          <div class="order-placed">
+           <div>Order Placed:</div>
+           <div><%= order2.updatedAt.toDateString() %></div>
+         </div>
+         <div class="total">
+           <div>Total:</div>
+           <div>R<%= order2.total %></div>
+         </div>
+         <div class="total">
+          <div>Selected option(s):</div>
+          <div>R<%= order2.breakfast %></div>
+        </div>
+         <div class="order-id">
+           <div>Order ID:</div>
+           <div><%= order2._id %></div>
+         </div> 
+       </div>
+       <% let matchingRoom; %>
+       <% order2.cart2.forEach((cartItem)=>{ %>
+          <% conferences.forEach((conference)=>{ %>
+              <%  if ( cartItem.conferenceId === conference.id) { %>
+               <% matchingRoom = conference; %>
+              <% } %>
+          <% }) %>
+        <div class="main-section">
+          <div class="image-contain">
+             <img class="image-room" src="/<%= matchingRoom.image %>">
+           </div>
+           <div class="details-container">
+             <div>Room Type: <%= matchingRoom.type %></div>
+             <div>Number of rooms: <%= cartItem.quantity %></div>
+             <div>Pax: <%= cartItem.pax %></div>
+             <div>Checkin date: <%= cartItem.checkin %></div>
+             <div>Checkout date: <%= cartItem.checkout %></div>
+           </div>
+       </div>
+        <% }) %>
+      <% }) %> 
+      <% } %>
+     
+    
+    </div>
+  </div>
+</body>
+</html>

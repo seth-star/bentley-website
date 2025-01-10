@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin - User List</title>
+  <link rel="stylesheet" href="/styles/admin.css">
+</head>
+<body>
+  <div class="container">
+    <h1>User List</h1>
+    <div class="search-container">
+      <input type="text" id="searchInput" placeholder="Search for users...">
+      <button onclick="searchTable()">Search</button>
+    </div>
+    <table id="userTable">
+      <thead>
+        <tr>
+          <th>Title</th>
+          <th>Name</th>
+          <th>Surname</th>
+          <th>Id Number</th>
+          <th>Email</th>
+          <th>Phone</th>
+          <th>Address</th>
+          <th>Compagny</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% orders1.forEach(user => { %>
+          <tr>
+            <td><%= user.title %></td>
+            <td><%= user.name %></td>
+            <td><%= user.surname %></td>
+            <td><%= user.id %></td>
+            <td><%= user.email %></td>
+            <td><%= user.phone %></td>
+            <td><%= user.address %></td>
+            <td><%= user.compagny %></td>
+          </tr>
+        <% }); %>
+      </tbody>
+    </table>
+  </div>
+  <script>
+    function searchTable() {
+      const input = document.getElementById('searchInput');
+      const filter = input.value.toLowerCase();
+      const table = document.getElementById('userTable');
+      const tr = table.getElementsByTagName('tr');
+
+      for (let i = 1; i < tr.length; i++) {
+        const td = tr[i].getElementsByTagName('td');
+        let match = false;
+        for (let j = 0; j < td.length; j++) {
+          if (td[j]) {
+            if (td[j].innerHTML.toLowerCase().indexOf(filter) > -1) {
+              match = true;
+              break;
+            }
+          }
+        }
+        if (match) {
+          tr[i].style.display = '';
+        } else {
+          tr[i].style.display = 'none';
+        }
+      }
+    }
+  </script>
+</body>
+</html>

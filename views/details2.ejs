@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Details</title>
+  <link rel="stylesheet" href="/styles/order.css">
+
+</head>
+<body>
+  <header class="header">
+    <div class="left">
+      
+    </div>
+    <div class="center">
+      <div class="container2">
+        <p class="welcome">
+          Order Details
+        </p>
+        <img src="/images/logos/Bentley's logo2.jpg" class="logo">
+      </div>
+    </div>
+    <div class="right"></div>
+  </header>
+  <div class="main"> 
+    <div class="section1 ">
+     
+        <div class="head-section">
+          <div class="order-placed">
+            <div>Order Placed:</div>
+           <div><%=orders1? orders1.updatedAt.toDateString() : 'N/A' %></div>
+            
+         </div>
+         <div class="total">
+           <div>Total Amount Paid:</div>
+           <div>R<%=orders1? orders1.total : 'N/A' %></div>
+         </div>
+         <div class="total">
+          <div>Breakfast:</div>
+          <div>R<%=orders1? orders1.option : 'N/A' %></div>
+         </div>
+         <div class="order-id">
+           <div>Order ID:</div>
+           <div><%=orders1 ? orders1._id: 'N/A' %></div>
+         </div> 
+       </div>
+       <% let matchingRoom; %>
+       
+       <% orders1?orders1.cart.forEach((cartItem)=>{ %>
+          <% rooms.forEach((room)=>{ %>
+              <%  if ( cartItem.roomId === room.id) { %>
+               <% matchingRoom = room; %>
+              <% } %>
+          <% }) %>
+        <div class="main-section">
+          <div class="image-contain">
+             <img class="image-room" src="/<%= matchingRoom.image %>">
+           </div>
+           <div class="details-container">
+             <div>Room Type: <%= matchingRoom.type %></div>
+             <div>Number of rooms: <%= cartItem.quantity %></div>
+             <div>Pax: <%= cartItem.pax %></div>
+             <div>Checkin date: <%= cartItem.checkin %></div>
+             <div>Checkout date: <%= cartItem.checkout %></div>
+             
+           </div>
+       </div>
+        <% }):'N/A' %>
+      
+    </div>
+  </div>
+  
+</body>
+</html>

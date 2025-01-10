@@ -1,0 +1,92 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin - Order List</title>
+  <link rel="stylesheet" href="/styles/admin1.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Order List-Accommodation</h1>
+    <div class="search-container">
+      <input type="text" id="searchInput" placeholder="Search for orders...">
+      <button onclick="searchTable()">Search</button>
+    </div>
+    <table id="orderTable">
+      <thead>
+        <tr>
+          <th>Order ID</th>
+          <th>Order Date</th>
+          <th>Total Amount</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% orders1.forEach(order2 => { %>
+          <tr>
+            <td><%= order2._id %></td>
+            <td><%= order2.updatedAt.toDateString() %></td>
+            <td>R<%= order2.total %></td>
+            <td>
+              <button class="btn" onclick="window.location.href='/reservation/<%= order2._id %>'">View Order</button>
+
+              <button class="btn" >Delete Order</button>
+
+              <button onclick="sendUrlToFrontend('<%= order2._id %>')" class="btn"  
+              >Available</button>
+
+              <button class="btn" onclick="sendUrlToFrontend2('<%= order2._id %>')">Not Available</button>
+            </td>
+          </tr>
+        <% }); %>
+      </tbody>
+    </table>
+  </div>
+  <script>
+     
+    function sendUrlToFrontend(orderId) {
+      const url = `/processing/accom/avail/${orderId}`;
+      alert(`URL sent to frontend: ${url}`);
+      
+      window.location.href = url;
+    }
+     
+    function sendUrlToFrontend2(orderId) {
+      const url = `/processing/accom/notavail/${orderId}`;
+      alert(`URL sent to frontend: ${url}`);
+    
+      window.location.href = url;
+    }
+
+
+    
+    function searchTable() {
+      const input = document.getElementById('searchInput');
+      const filter = input.value.toLowerCase();
+      const table = document.getElementById('orderTable');
+      const tr = table.getElementsByTagName('tr');
+
+      for (let i = 1; i < tr.length; i++) {
+        const td = tr[i].getElementsByTagName('td');
+        let match = false;
+        for (let j = 0; j < td.length; j++) {
+          if (td[j]) {
+            if (td[j].innerHTML.toLowerCase().indexOf(filter) > -1) {
+              match = true;
+              break;
+            }
+          }
+        }
+        if (match) {
+          tr[i].style.display = '';
+        } else {
+          tr[i].style.display = 'none';
+        }
+      }
+    }
+  </script>
+</body>
+</html>

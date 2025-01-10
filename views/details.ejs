@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> Details</title>
+  <link rel="stylesheet" href="/styles/order.css">
+
+</head>
+<body>
+  <header class="header">
+    <div class="left">
+      
+    </div>
+    <div class="center">
+      <div class="container2">
+        <p class="welcome">
+           Order Details
+        </p>
+        <img src="/images/logos/Bentley's logo2.jpg" class="logo">
+      </div>
+    </div>
+    <div class="right"></div>
+  </header>
+  <div class="main"> 
+    <div class="section1 ">
+     
+      
+        <div class="head-section">
+          <div class="order-placed">
+           <div>Order Placed:</div>
+           <div><%= orders.updatedAt.toDateString() %></div>
+         </div>
+         <div class="total">
+           <div>Total:</div>
+           <div>R<%= orders.total %></div>
+         </div>
+         <div class="total">
+          <div>Selected option(s):</div>
+          <div>R<%= orders.breakfast %></div>
+        </div>
+         <div class="order-id">
+           <div>Order ID:</div>
+           <div><%= orders._id %></div>
+           <div><%= orders.name %></div>
+         </div> 
+       </div>
+       <% let matchingRoom; %>
+       <% orders.cart2.forEach((cartItem)=>{ %>
+          <% conferences.forEach((conference)=>{ %>
+              <%  if ( cartItem.conferenceId === conference.id) { %>
+               <% matchingRoom = conference; %>
+              <% } %>
+          <% }) %>
+        <div class="main-section">
+          <div class="image-contain">
+             <img class="image-room" src="/<%= matchingRoom.image %>">
+           </div>
+           <div class="details-container">
+             <div>Venue: <%= matchingRoom.type %></div>
+             <div>Arrival time: <%= cartItem.time %></div>
+             <div>Pax: <%= cartItem.pax %></div>
+             <div>First Day: <%= cartItem.checkin %></div>
+             <div>Last Day: <%= cartItem.checkout %></div>
+             
+             <%let matchingOption; %>
+              <% breakfastOptions2.forEach((breakfastOption)=>{ %>
+                <% if ( cartItem.breakfastId === breakfastOption.breakfastId) { %>
+                <% matchingOption = breakfastOption; %>
+                <% } %>
+                <% }); %>
+                <div>Selected Option: R<%= matchingOption.priceCents %></div>
+           </div>
+       </div>
+        <% }) %>
+      
+    </div>
+  </div>
+  
+</body>
+</html>

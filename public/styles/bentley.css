@@ -1,0 +1,345 @@
+body{
+  margin: 0;
+  padding: 0;
+  padding-top: 55px; 
+  font-family: initial,Arial, Helvetica, sans-serif;
+}
+p{
+  font-weight: bold;
+  font-size: 16px;
+  margin: 0px;
+}
+
+.header{
+  height: 55px;
+  display: flex;
+  align-items: start;
+  border:  rgb(211, 169, 169) solid 2px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 200;
+ /* background-color: rgb(114, 33, 33);*/
+  background-color: rgb(211, 169, 169);
+}
+
+.start{
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: start;
+}
+.middle{
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  background-color: rgb(114, 33, 33);
+}
+.icons{
+  height: 45%;
+  padding: 4px;
+  cursor: pointer;
+}
+.icons:hover{
+  border: white solid 1px;
+  padding: 8px;
+}
+
+.restaurant-bar{
+  margin-left: 5px;
+  cursor: pointer;
+  color: white;
+  font-size: 16px;
+}
+.restaurant-bar:hover{
+  color: rgb(255, 208, 0);
+  text-decoration: underline;
+}
+.restaurant-bar:active{
+  color: rgb(88, 255, 219);
+}
+.cart-icon{
+  height: 50%;
+}
+.cart-quantity{
+  position: absolute;
+  color: white;
+  left: 98px;
+  top: 10px;
+}
+.cart-quantity2{
+  position: absolute;
+  color: white;
+  left: 160px;
+  top: 10px;
+}
+.container{
+  display: flex;
+  align-items: center;
+}
+.left-container, .right-container{
+  display: grid;
+  overflow: hidden;
+  height: 300px;
+  width: 500px;
+}
+.logo{
+  width: 250px;
+}
+.images-container{
+  width: calc(500px * 5);
+  animation: glisse 40s infinite;
+}
+.middle-container{
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  height: 300px;
+  border: rgb(223, 195, 195) solid 1.5px;
+}
+.welcome{
+  z-index: 100;
+  margin-top: 120px;
+  margin-bottom: 20px;
+  color: brown;
+}
+.images{
+  float: left;
+}
+@keyframes glisse {
+  0% {
+    transform: translate(0);
+  }
+  10% {
+    transform: translate(0);
+  }
+  20% {
+    transform: translate(-500px);
+  }
+  30% {
+    transform: translate(-500px);
+  }
+  40% {
+    transform: translate(-1000px);
+  }
+  50% {
+    transform: translate(-1000px);
+  }
+  60% {
+    transform: translate(-1500px);
+  }
+  70% {
+    transform: translate(-1500px);
+  }
+  80% {
+    transform: translate(-2000px);
+  }
+  90% {
+    transform: translate(-2000px);
+  }
+  100% {
+    transform: translate(0);
+  }
+}
+.img{
+  width: 115px;
+  animation: mylogo 10s infinite linear;
+  position: absolute;
+  top: 70px;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
+@keyframes mylogo {
+  0%{
+    transform: translate(-50%,-50%) rotate(0deg);
+  }
+  100%{
+    transform: translate(-50%,-50%) rotate(360deg);
+  }
+}
+.main{
+  display: grid;
+  grid-template-rows: 50px,400px, 50px,400px;
+}
+.main1{
+  margin-top: 0px;
+  display: grid;
+  gap: 8px;
+  grid-template-columns: repeat(auto-fit ,minmax(200px,1fr));
+  justify-content: center;
+}
+.rooms-container{
+  display: flex;
+  flex-direction: column;
+  height: auto;
+  align-items: center;
+  justify-content: center;
+  margin-left: 6px;
+}
+.images2{
+  max-width: 100%;
+  min-width: 100%;
+}
+.room-description{
+  width: 99%;
+  height: 50px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit ,minmax(40px,1fr));
+  justify-content: center;
+  align-items: center;
+  box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.15);
+  position: relative;
+}
+
+.select-button{
+  width: 40px;
+  height: 28px;
+  border-radius:  5px;
+  border: none;
+  box-shadow: 1px 2px 3px rgba(0, 0, 0,0.3);
+  cursor: pointer;
+}
+
+.book-now-button{
+  height: 30px;
+  border-radius: 15px;
+  background-color: orange;
+  border: none;
+  color: white;
+  font-weight: bold;
+  margin-right: 5px;
+  cursor: pointer;
+}
+.price{
+  margin-top: 20px;
+}
+
+.room-description2{
+  width: 100%;
+  height: 50px;
+  display: grid;
+  grid-template-columns: repeat(3 ,1fr);
+  align-items: center;
+  box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.15);
+  position: relative;
+  
+}
+.description2{
+ display: grid;
+ justify-content: start;
+ width: 180px;
+ margin-left: 5px;
+ color: brown;
+}
+
+.added-to-cart{
+  position: absolute;
+  display: flex;
+  right: 0;
+  top: 40px;
+  align-items: center;
+  z-index: 200;
+  font-weight: bold;
+  opacity: 0;
+  /*color: rgb(6, 82, 82);*/
+  color: rgb(6, 82, 82);
+  background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent background */
+  padding: 10px 20px; /* Padding for spacing */
+  border-radius: 5px; /* Rounded corners */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+  transition: opacity 0.3s ease-in-out;
+}
+.added{
+  opacity: 1;
+}
+.extra-info,.extra-info2{
+  cursor: pointer;
+  margin-left: 20px;
+  font-size: 16px;
+  display: flex;
+  flex-direction: column;
+  color: rgb(88, 255, 219);
+  text-decoration: none;
+}
+
+.extra-info:hover{
+  text-decoration: underline; 
+}
+.extra{
+  padding-top: 5px;
+  color: rgb(88, 255, 219);
+  height: 49px;
+  padding-right: 10px;
+  background-color: brown;
+  width: 180px;
+  margin-bottom: 3px;
+}
+
+.bedroom{
+  color: white;
+  display: grid;
+  margin-left: 5px;
+}
+.right2,.right1{
+  height: 80%;
+  display: flex;
+  align-items: center;
+  position: relative;
+  padding: 2px;
+  cursor: pointer;
+  color: white;
+  text-decoration: none;
+  width: 180px;
+  background-color: rgb(114, 33, 33);
+}
+.right2:hover{
+  background-color: rgb(224, 96, 22);
+  cursor: pointer;
+}
+.right1{
+  width: 120px;
+}
+.right1:hover{
+  background-color: rgb(224, 96, 22);
+  cursor: pointer;
+}
+.footer {
+  background-color: #333; /* Dark background color */
+  color: #fff; /* White text color */
+  padding: 20px; /* Padding for spacing */
+  display: flex;
+  justify-content: space-between; /* Space between footer sections */
+  align-items: center; /* Center items vertically */
+  flex-wrap: wrap; /* Allow items to wrap on smaller screens */
+}
+
+.footer1 {
+  flex: 1; /* Allow the section to grow and fill available space */
+  margin: 10px; /* Margin for spacing */
+}
+
+.footer-title {
+  font-size: 18px; /* Font size for title */
+  font-weight: bold; /* Bold text */
+  margin-bottom: 10px; /* Margin below title */
+}
+
+.footer-text {
+  font-size: 14px; /* Font size for text */
+  margin: 5px 0; /* Margin for spacing */
+}
+
+.footer a {
+  color: #fff; /* White text color for links */
+  text-decoration: none; /* Remove underline from links */
+}
+
+.footer a:hover {
+  text-decoration: underline; /* Underline links on hover */
+}
+
