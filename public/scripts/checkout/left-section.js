@@ -36,13 +36,13 @@ export function renderCheckout() {
           </div>
         </div>
         <p class="checkin-out">
-          Checkin Date:
+          Arrival Date:
         </p>
         <div >
          ${cartItem.checkin}
         </div>
         <p class="checkin-out">
-          Checkout Date:
+          Departure Date:
         </p>
         <div>
           ${cartItem.checkout}
