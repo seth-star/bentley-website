@@ -3,6 +3,7 @@
     "@paypal/checkout-server-sdk": "^1.0.3",
     "body-parser": "^1.20.3",
     "cors": "^2.8.5",
+    "csv-parser": "^3.1.0",
     "dotenv": "^16.4.7",
     "ejs": "^3.1.10",
     "express": "^4.21.1",
@@ -15,9 +16,10 @@
   "name": "beckend",
   "version": "1.0.0",
   "description": " ",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
-    "dev": "nodemon app.js"
+    "dev": "nodemon processCsv.js/nodemon app.js"
+    
   },
   "author": "",
   "license": "ISC"
