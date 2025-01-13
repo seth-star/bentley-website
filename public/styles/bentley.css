@@ -6,8 +6,6 @@ body{
   display: block;
   justify-content: center;
   align-items: center;
-  
-  
 }
 p{
   font-weight: bold;
@@ -105,7 +103,6 @@ p{
   justify-content: center;
   position: relative;
   height: 300px;
-  border: rgb(223, 195, 195) solid 1.5px;
 }
 .welcome{
   z-index: 100;

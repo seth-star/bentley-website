@@ -39,7 +39,7 @@
               >Available</button>
               
               <button class="btn" onclick="sendUrlToFrontend2('<%= order2._id %>')">Not Available</button>
-              <div id="link-container-<%= order2._id %>" class="link-container"></div>
+              
             </td>
           </tr>
         <% }); %>
@@ -64,9 +64,12 @@
           const data = await response;
           console.log(data);
           // Handle the response data as needed
+          if (document.querySelector('.js-div')) {
+            document.querySelector('.js-div').innerHTML = data;
+          }
           
-          const linkContainer = document.getElementById(`link-container-${availid}`);
-          linkContainer.innerHTML = `<a href="/processing/${availid}" target="_blank">Check Availability</a>`;
+          /*const linkContainer = document.getElementById(`link-container-${availid}`);
+          linkContainer.innerHTML = `<a href="/processing/${availid}" target="_blank">Check Availability</a>`;*/
 
           alert(`Availability status: ${data.status}`);
         } catch (error) {

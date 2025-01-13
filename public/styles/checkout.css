@@ -72,13 +72,17 @@ body{
 }
 .booking-summary{
   display: flex;
-  flex-wrap: wrap-reverse;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
 }
 .picture{
   height: 240px;
 }
 .image-container{
   height: 240px;
+  align-items: center;
+  justify-content: center;
 }
 .room-detail{
   font-size: 17px;
@@ -88,7 +92,7 @@ body{
   flex-direction: column;
   background-color: rgb(85, 78, 78);;
   align-items: center;
-  justify-content: right;
+  justify-content: center;
   height: 240px;
 }
 .room-detail2{
