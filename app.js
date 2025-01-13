@@ -49,53 +49,19 @@ app.get('/submit2',(req,res)=>{
   res.render('login2');
 });
   
-//submitted
+//submitt
   app.post('/submit2',async(req,res)=>{
-    /*
+    
      const users2 = new User(req.body);
      users2.save().then((result)=>{
       res.redirect('/processing');
       
       }).catch((err)=>{
      console.log(err);
-     });*/
-     try {
-      const users2 = new User(req.body);
-      const result = await users2.save();
-  
-      // Generate a unique link for order processing status
-      const processingLink = `${req.protocol}://${req.get('host')}/processing/${result._id}`;
-  
-      // Redirect to the wait page with the unique link
-      res.redirect(`/wait/${result._id}`);
-    } catch (err) {
-      console.log(err);
-      res.status(500).send('Error processing order');
-    }
+     });
+     
      })
-
-// Route to render the wait page
- app.get('/wait/:id', async (req, res) => {
-  const availid = req.params.id;
-  const processingLink = `${req.protocol}://${req.get('host')}/processing/${availid}`;
-  res.render('wait', { processingLink });
-});
- // Route to render the processing page
-app.get('/processing/:id', async (req, res) => {
-  try {
-    const orderId = req.params.id;
-    const order = await Order.findById(orderId);
-    if (!order) {
-      return res.status(404).send('Order not found');
-    }
-    res.render('processing', { order });
-  } catch (err) {
-    console.log(err);
-    res.status(500).send('Error fetching order details');
-  }
-}); 
-
-
+     
 //for app2(accommodation)
 
 app.get('/accommodation',(request,response)=>{

@@ -35,9 +35,9 @@
 
               <button class="btn" >Delete Order</button>
              
-              <button  class="btn js-btn" data-availId="<%= order2._id %>"
+              <button  class="btn" onclick="sendUrlToFrontend('<%= order2._id %>')"
               >Available</button>
-              <div id="link-container-<%= order2._id %>" class="link-container"></div>
+              
               
               <button class="btn" onclick="sendUrlToFrontend2('<%= order2._id %>')">Not Available</button>
               
@@ -47,39 +47,8 @@
       </tbody>
     </table>
   </div>
-  <script type="module">
+  <script>
     
-    document.querySelectorAll('.js-btn').forEach((button)=>{
-     button.addEventListener('click',async()=>{
-      const availid = button.dataset.availid;
-     
-      try {
-          const url = `/processing/accom/avail/${availid}`;
-          const response = await fetch(url, {
-            method: 'GET',
-            headers: {
-              'Content-Type': 'text/html'
-            }
-          });
-          if (!response.ok) {
-            throw new Error('Network response was not ok');
-          }
-         const data = await response 
-          
-          console.log(data);
-          // Handle the response data as needed
-         console.log(response.url);
-         
-
-         window.location.href = `/wait/${availid}`;
-         
-        } catch (error) {
-          console.error('Error:', error);
-          alert('Error fetching availability status');
-        }
-    })
-    
-     
     function sendUrlToFrontend(orderId) {
       const url = `/processing/accom/avail/${orderId}`;
       alert(`URL sent to frontend: ${url}`);
