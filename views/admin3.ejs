@@ -35,10 +35,11 @@
 
               <button class="btn" >Delete Order</button>
 
-              <button onclick="sendUrlToFrontend('<%= order2._id %>')" class="btn"  
+              <button  class="btn js-btn" data-availId="<%= order2._id %>"
               >Available</button>
-
+              
               <button class="btn" onclick="sendUrlToFrontend2('<%= order2._id %>')">Not Available</button>
+              <div id="link-container-<%= order2._id %>" class="link-container"></div>
             </td>
           </tr>
         <% }); %>
@@ -46,6 +47,34 @@
     </table>
   </div>
   <script>
+    document.querySelectorAll('.js-btn').forEach((button)=>{
+     button.addEventListener('click',async()=>{
+      const availid = button.dataset.availid;
+      try {
+          const url = `/processing/accom/avail/${availid}`;
+          const response = await fetch(url, {
+            method: 'GET',
+            headers: {
+              'Content-Type': 'text/html'
+            }
+          });
+          if (!response.ok) {
+            throw new Error('Network response was not ok');
+          }
+          const data = await response;
+          console.log(data);
+          // Handle the response data as needed
+          
+          const linkContainer = document.getElementById(`link-container-${availid}`);
+          linkContainer.innerHTML = `<a href="/processing/${availid}" target="_blank">Check Availability</a>`;
+
+          alert(`Availability status: ${data.status}`);
+        } catch (error) {
+          console.error('Error:', error);
+          alert('Error fetching availability status');
+        }
+      });
+    });
      
     function sendUrlToFrontend(orderId) {
       const url = `/processing/accom/avail/${orderId}`;

@@ -12,6 +12,8 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.set('view engine','ejs');
 
+
+
 const dburl = 'mongodb://user1:2Dtc6_KEX6YRd@cluster0-shard-00-00.6sup7.mongodb.net:27017,cluster0-shard-00-01.6sup7.mongodb.net:27017,cluster0-shard-00-02.6sup7.mongodb.net:27017/?ssl=true&replicaSet=atlas-b84jc1-shard-0&authSource=admin&retryWrites=true&w=majority&appName=Cluster0'
 
 mongoose.connect(dburl).then((result)=>{
@@ -34,10 +36,10 @@ app.get('/submit',(req,res)=>{
 });
 
 app.post('/submit',(req,res)=>{
- 
+  
     const users = new User(req.body);
     users.save().then((result)=>{
-       res.redirect('/processing');
+       response.redirect('/processing')
      }).catch((err)=>{
     console.log(err);
     });
@@ -47,18 +49,19 @@ app.get('/submit2',(req,res)=>{
   res.render('login2');
 });
   
-app.post('/submit2',(req,res)=>{
-   
-   const users2 = new User(req.body);
-   users2.save().then((result)=>{
 
-  res.redirect('/processing');
-    
-    
-    }).catch((err)=>{
-   console.log(err);
-   });
-   })
+  app.post('/submit2',(req,res)=>{
+    const availid = req.params.id;
+    const url = `/processing/accom/avail/${availid}`;
+     const users2 = new User(req.body);
+     users2.save().then((result)=>{
+      res.redirect('/processing');
+      
+      }).catch((err)=>{
+     console.log(err);
+     });
+     })
+
 
   
 
@@ -230,27 +233,29 @@ app.post('/accommodation',(request,response)=>{
  });
 
  //for processing accommodation in app2
- app.get('/processing/accom/avail/',(request,response)=>{
-  Order.find().then((result)=>{
-  
-  }).catch((err)=>{
-   console.log(err);
-  });
-   
-});
-
-app.get('/processing/accom/avail/:id',(request,response)=>{
-  const id = request.params.id;
-  
-  Order.findById(id).then((result)=>{
-   response.render('available',{orders1: result});
-   
-  }).catch((err)=>{
-    console.log(err);
+ 
+ 
+  app.get('/processing/accom/avail/',(request,response)=>{
+    Order.find().then((result)=>{
+    
+    }).catch((err)=>{
+     console.log(err);
+    });
+     
   });
   
-})
-
+  app.get('/processing/accom/avail/:id',(request,response)=>{
+    const availid = request.params.id;
+    
+    Order.findById(availid).then((result)=>{
+     response.render('available',{orders1: result});
+     
+    }).catch((err)=>{
+      console.log(err);
+    });
+    
+  })
+ 
 app.get('/processing/accom/notavail',(request,response)=>{
   Order.find().then((result)=>{
   

@@ -3,6 +3,11 @@ body{
   padding: 0;
   padding-top: 55px; 
   font-family: initial,Arial, Helvetica, sans-serif;
+  display: block;
+  justify-content: center;
+  align-items: center;
+  
+  
 }
 p{
   font-weight: bold;
@@ -273,11 +278,14 @@ p{
 .extra{
   padding-top: 5px;
   color: rgb(88, 255, 219);
-  height: 49px;
+  /*height: 49px;*/
   padding-right: 10px;
   background-color: brown;
-  width: 180px;
+ /* width: 180px;*/
   margin-bottom: 3px;
+  display: flex;
+  width: auto;
+  height: auto;
 }
 
 .bedroom{
@@ -294,15 +302,15 @@ p{
   cursor: pointer;
   color: white;
   text-decoration: none;
-  width: 180px;
+  width: 250px;
   background-color: rgb(114, 33, 33);
 }
 .right2:hover{
-  background-color: rgb(224, 96, 22);
+  background-color: rgb(235, 201, 181);
   cursor: pointer;
 }
 .right1{
-  width: 120px;
+  width: 160px;
 }
 .right1:hover{
   background-color: rgb(224, 96, 22);

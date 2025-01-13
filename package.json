@@ -18,7 +18,7 @@
   "description": " ",
   "main": "app.js",
   "scripts": {
-    "dev": "nodemon processCsv.js/nodemon app.js"
+    "dev": "nodemon app.js"
     
   },
   "author": "",

@@ -1,5 +1,6 @@
 body{
   padding-top: 80px;
+  
 }
 
 .header{
@@ -31,8 +32,8 @@ body{
  font-weight: 600;
 }
 .rooms{
-  color: rgb(74, 5, 139);*/
-  font-weight: 500;
+  color: rgb(74, 5, 139);
+  font-weight: bold;
 }
 .section{
   display: flex;
@@ -381,6 +382,7 @@ body{
 @media (max-width: 330px) {
   .right-section {
     width: 250px;
+    border: none;
   }
   .center{
     justify-content: center;
