@@ -8,15 +8,18 @@
 </head>
 <body>
   <div class="container">
-    <div class="content">
+    <div class="content ">
+      
       <h1>Order Processing</h1>
-      <div id="link-container-<%= order2._id %>" class="link-container"></div>
-      <div class="js-div"></div>
-      <p>Checking availability...</p>
-      <p>Please wait for feedback.</p>
+      <div>
+      <p>Your order is being processed.Please wait for further updates</p>
+      <div class="link-container">
+        <a href="<%= processingLink %>" target="_blank">Check Availability</a>
+      </div>
       <div 
       class="loader"></div>
     </div>
   </div>
+  <script src="scripts/wait.js" type="module"></script>
 </body>
 </html>

@@ -34,9 +34,10 @@
               <button class="btn" onclick="window.location.href='/reservation/<%= order2._id %>'">View Order</button>
 
               <button class="btn" >Delete Order</button>
-
+             
               <button  class="btn js-btn" data-availId="<%= order2._id %>"
               >Available</button>
+              <div id="link-container-<%= order2._id %>" class="link-container"></div>
               
               <button class="btn" onclick="sendUrlToFrontend2('<%= order2._id %>')">Not Available</button>
               
@@ -46,10 +47,12 @@
       </tbody>
     </table>
   </div>
-  <script>
+  <script type="module">
+    
     document.querySelectorAll('.js-btn').forEach((button)=>{
      button.addEventListener('click',async()=>{
       const availid = button.dataset.availid;
+     
       try {
           const url = `/processing/accom/avail/${availid}`;
           const response = await fetch(url, {
@@ -61,23 +64,21 @@
           if (!response.ok) {
             throw new Error('Network response was not ok');
           }
-          const data = await response;
+         const data = await response 
+          
           console.log(data);
           // Handle the response data as needed
-          if (document.querySelector('.js-div')) {
-            document.querySelector('.js-div').innerHTML = data;
-          }
-          
-          /*const linkContainer = document.getElementById(`link-container-${availid}`);
-          linkContainer.innerHTML = `<a href="/processing/${availid}" target="_blank">Check Availability</a>`;*/
+         console.log(response.url);
+         
 
-          alert(`Availability status: ${data.status}`);
+         window.location.href = `/wait/${availid}`;
+         
         } catch (error) {
           console.error('Error:', error);
           alert('Error fetching availability status');
         }
-      });
-    });
+    })
+    
      
     function sendUrlToFrontend(orderId) {
       const url = `/processing/accom/avail/${orderId}`;
@@ -119,6 +120,7 @@
         }
       }
     }
+    })
   </script>
 </body>
 </html>
