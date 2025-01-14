@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Order Details</title>
+  <title>Order Details-Conference</title>
   <link rel="stylesheet" href="/styles/available.css">
 </head>
 <script src="https://www.paypal.com/sdk/js?client-id=ARPMelOzP764vwZIgynfBwiHYURQp-VR3J-DRlODSm9yc7ctE7sah11c1FtuaskR5Y0ncrK_7sKL8ZDs"></script>
@@ -43,10 +43,11 @@
     
       onApprove: function(data, actions) {
         return actions.order.capture().then(function(details){
-          
-           window.location.href = '/booking/';  
-        })
            
+           window.location.href = '/booking/<%= orders.id %>';  
+        })
+       
+         
         },
     }).render('#paypal');
   

@@ -1,15 +1,19 @@
 const express = require('express');
 const bodyParser = require('body-parser');
+const nodemailer = require('nodemailer');
+const dotenv = require('dotenv');
 const mongoose = require('mongoose');
 
 const Order = require('./config2.js');
 const Order2 = require('./config3.js');
 const User = require('./config.js');
 
+dotenv.config();
 const app = express();
 app.use(express.static('public'));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
+
 app.set('view engine','ejs');
 
 
@@ -24,6 +28,43 @@ mongoose.connect(dburl).then((result)=>{
   })
 
 })
+ 
+// Route to render the contact form
+app.get('/contact', (req, res) => {
+  res.render('contactform');
+});
+
+// Route to handle form submission
+app.post('/submitContactForm', (req, res) => {
+ // const { name, email, subject, message } = req.body;
+
+  // Send the form data via email (optional)
+  const transporter = nodemailer.createTransport({
+    service: 'gmail',
+    auth: {
+      user: process.env.EMAIL_USER,
+      pass: process.env.EMAIL_PASS
+    }
+  });
+  const mailOptions = {
+    from: 'shangozonveni@gmail.com',
+    to: req.body.email,
+    //subject: `Contact Form Submission: ${subject}`,
+    subject:req.body.subject,
+    text: req.body.message
+  };
+
+  transporter.sendMail(mailOptions, (error, info) => {
+    if (error) {
+      console.log(error);
+      res.status(500).send('Error sending email');
+    } else {
+      console.log('Email sent: ' + info.response);
+      res.send('Form submitted successfully');
+    }
+  });
+});
+
 
 //for app1
 
@@ -39,7 +80,7 @@ app.post('/submit',(req,res)=>{
   
     const users = new User(req.body);
     users.save().then((result)=>{
-       response.redirect('/processing')
+       res.redirect('/processing')
      }).catch((err)=>{
     console.log(err);
     });
@@ -166,59 +207,6 @@ app.get('/admin/accommodation',(request,response)=>{
    });
 })
 
-app.get('/reservation/:id',(request,response)=>{
- 
-  const id = request.params.id;
-   const rooms = [{
-    id:'1a',
-    image:'images/rooms/image9.jpg',
-    type:'DOUBLE BED',
-    priceCents: 790
-  },{
-    id:'2b',
-    image:'images/rooms/executive room.jpg',
-    type:'EXECUTIVE SUITE',
-    priceCents: 1030
-  },{
-    id:'3c',
-    image:'images/rooms/image9.jpg',
-    type:'SINGLE BED',
-    priceCents: 590
-  }];
-
-  const breakfastOptions = [{
-    breakfastId:'1a',
-    persons:'none',
-    priceCents: 0
-   },{
-    breakfastId:'2b',
-    persons:'one',
-    priceCents: 95
-   },{
-    breakfastId:'3',
-    persons:  'two',
-    priceCents: 190
-    
-   },{
-    breakfastId:'3c',
-    persons:'three',
-    priceCents: 285
-   },{
-    breakfastId:'4d',
-    persons:  'All in the room(s)',
-    priceCents: ''
-    
-   }];
-  
-  Order.findById(id).then((result)=>{
-    response.render('details2',{orders1:result,rooms,breakfastOptions});
-    //response.send(result)
-
-  }).catch((err)=>{
-    console.log(err);
-  });
-  
-});
 app.post('/accommodation',(request,response)=>{
   const order = new Order(request.body); 
   order.save().then((result)=>{

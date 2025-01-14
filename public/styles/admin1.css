@@ -95,3 +95,39 @@ table tr:hover {
 .btn:hover {
   background-color: #218838;
 }
+.styled-checkbox + label {
+  position: relative;
+  cursor: pointer;
+  padding-left: 25px;
+  line-height: 20px;
+  display: inline-block;
+  color: #666;
+}
+
+.styled-checkbox + label:before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 18px;
+  height: 18px;
+  border: 1px solid #ddd;
+  border-radius: 3px;
+  background: #fff;
+}
+
+.styled-checkbox:checked + label:before {
+  background: #007bff;
+  border-color: #007bff;
+}
+.styled-checkbox:checked + label:after {
+  content: '';
+  position: absolute;
+  left: 5px;
+  top: 2px;
+  width: 6px;
+  height: 12px;
+  border: solid #fff;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}

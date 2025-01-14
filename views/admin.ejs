@@ -13,6 +13,10 @@
       <input type="text" id="searchInput" placeholder="Search for orders...">
       <button onclick="searchTable()">Search</button>
     </div>
+    <a  href='/booking'
+    >View all orders</a>
+    <a  href='/admin/users'
+    >User List</a>
     <table id="orderTable">
       <thead>
         <tr>
@@ -37,6 +41,12 @@
               >Available</button>
 
               <button class="btn" onclick="sendUrlToFrontend2('<%= order2._id %>')">Not Available</button>
+              <button  class="btn" onclick="window.location.href='/contact'"
+              >Send a message</button>
+             
+              
+              <input type="checkbox" class="styled-checkbox" id="checkbox-<%= order2._id %>">
+              <label for="checkbox-<%= order2._id %>"></label>
             </td>
           </tr>
         <% }); %>

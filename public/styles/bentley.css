@@ -70,13 +70,17 @@ p{
   position: absolute;
   color: white;
   left: 98px;
+  right: 98px;
   top: 10px;
+  bottom: 10px;
 }
 .cart-quantity2{
   position: absolute;
   color: white;
   left: 160px;
+  right: 160px;
   top: 10px;
+  bottom: 10px;
 }
 .container{
   display: flex;
@@ -289,6 +293,7 @@ p{
   color: white;
   display: grid;
   margin-left: 5px;
+  margin-top: 10px;
 }
 .right2,.right1{
   height: 80%;

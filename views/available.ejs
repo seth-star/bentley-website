@@ -44,7 +44,7 @@
       onApprove: function(data, actions) {
         return actions.order.capture().then(function(details){
          
-           window.location.href = '/reservation/';  
+           window.location.href = '/reservation/<%= orders1.id %>';  
         })
            
         },
