@@ -67,20 +67,14 @@ p{
   height: 50%;
 }
 .cart-quantity{
-  position: absolute;
+  font-weight: bold;
   color: white;
-  left: 98px;
-  right: 98px;
-  top: 10px;
-  bottom: 10px;
+ 
 }
 .cart-quantity2{
-  position: absolute;
+  font-weight: bold;
   color: white;
-  left: 160px;
-  right: 160px;
-  top: 10px;
-  bottom: 10px;
+  
 }
 .container{
   display: flex;
@@ -178,6 +172,7 @@ p{
   gap: 8px;
   grid-template-columns: repeat(auto-fit ,minmax(200px,1fr));
   justify-content: center;
+  align-items: center;
 }
 .rooms-container{
   display: flex;
@@ -306,6 +301,7 @@ p{
   text-decoration: none;
   width: 250px;
   background-color: rgb(114, 33, 33);
+  margin-bottom: 3px;
 }
 .right2:hover{
   background-color: rgb(235, 201, 181);
@@ -352,4 +348,3 @@ p{
 .footer a:hover {
   text-decoration: underline; /* Underline links on hover */
 }
-
