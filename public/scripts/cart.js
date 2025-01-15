@@ -9,14 +9,16 @@ if (!cart) {
     breakfastId:'1a',
     checkin: '<input class="js-checkin" type="date">',
     checkout: '<input class="js-checkout" type="date">',
-    pax:'<input type="number" class="pax js-pax">'
+    pax:'<input type="number" class="pax js-pax">',
+    email: '<input class="js-email" type="email">'
   },{
     roomId:'2b',
     quantity: 2,
     breakfastId:'2b',
     checkin: '<input class="js-checkin" type="date">',
     checkout: '<input class="js-checkout" type="date">',
-    pax:'<input type="number" class="pax js-pax">'
+    pax:'<input type="number" class="pax js-pax">',
+    email: '<input class="js-email" type="email">'
   }];*/
   cart = [];
   
@@ -64,6 +66,10 @@ export function checkinDate(roomId) {
       if (document.querySelector('.js-pax')) {
         matchingItem.pax = Number(document.querySelector('.js-pax').value)
        } 
+
+       if (document.querySelector('.js-email')) {
+        matchingItem.email = String(document.querySelector('.js-email').value)
+       } 
     }
    
      });
@@ -88,9 +94,10 @@ export function addToCart(roomId) {
       roomId: roomId,
       quantity: Number(select),
       breakfastId: '1a',
-      checkin: '<input class="js-checkin" type="date">',
-      checkout: '<input class="js-checkout" type="date">',
-      pax:'<input type="number" class="pax js-pax">'
+      checkin: '<input class="checkin js-checkin" type="date">',
+      checkout: '<input class="checkin js-checkout" type="date">',
+      pax:'<input type="number" class="pax js-pax">',
+      email: '<input class="email js-email" type="email" placeholder="Enter your email" >'
     });
   }
  saveToStorage();
@@ -113,9 +120,10 @@ export function addToCartExecutive(roomId) {
       roomId: roomId,
       quantity: 1,
       breakfastId: '1a',
-      checkin: '<input class="js-checkin" type="date">',
-      checkout: '<input class="js-checkout" type="date">',
-      pax:'<input type="number" class="pax js-pax">'
+      checkin: '<input class="checkin js-checkin" type="date">',
+      checkout: '<input class="checkin js-checkout" type="date">',
+      pax:'<input type="number" class="pax js-pax">',
+      email: '<input class="email js-email" type="email"placeholder="Enter your email" >'
     });
   }
  saveToStorage();
@@ -144,9 +152,9 @@ export function updateCartQuantity() {
   if (document.querySelector('.js-rooms')) {
     document.querySelector('.js-rooms').innerHTML = `${cartQuantity} room(s)`
   }
-  
   saveToStorage();
 }
+
 export function updateQuantity(newQuantity,roomId) {
   let matchingItem;
 

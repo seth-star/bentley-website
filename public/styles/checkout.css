@@ -1,6 +1,11 @@
 body{
   padding-top: 80px;
-  
+  display: flex; /* Use Flexbox for layout */
+  /*flex-direction: column; /* Arrange items in a column */
+  align-items: center; /* Center items horizontally */
+  justify-content: flex-start; /* Align items to the start vertically */
+  /*min-height: 100vh; /* Minimum height of the viewport */
+  box-sizing: border-box; /* Includ*/
 }
 
 .header{
@@ -21,8 +26,7 @@ body{
   margin-left: 5px;
 }
 .logo:hover{
-  border: rgb(102, 255, 0) solid 1px;
-  margin-left: 5px;
+  cursor: pointer;
 }
 .center{
  display: flex;
@@ -37,8 +41,8 @@ body{
 }
 .section{
   display: flex;
-  flex-wrap: wrap;
-  column-gap: 10px;
+  /*flex-wrap: wrap;*/
+  column-gap: 5px;
   justify-content: center;
 }
 .infos{
@@ -54,28 +58,70 @@ body{
   display: flex;
   flex-wrap: wrap;
 }
-.reservation-containers{
-  display: flex;
-  flex-direction: column;
-  height: 300px;
-  margin-top: 10px;
-  padding-left: 15px;
-  border-radius: 6px;
+.reservation-containers {
+  display: flex; /* Use Flexbox for layout */
+  flex-direction: column; /* Arrange items in a column */
+  height: auto; /* Automatic height */
+  margin-top: 10px; /* Margin at the top */
+  padding: 15px; /* Padding for spacing */
+  border-radius: 6px; /* Rounded corners */
+  background-color: #f9f9f9; /* Light gray background color */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  /*box-sizing: border-box; /* Include padding and border in the element's total width and height */
+
 }
-.reservation-date{
-  font-size: 20px;
-  color: brown;
-  font-weight: bold;
-  margin-top: 10px; 
-  align-items: center;
-  display: flex;
+.reservation-date {
+  font-size: 20px; /* Font size */
+  color: brown; /* Text color */
+  font-weight: bold; /* Bold text */
+  margin-top: 10px; /* Margin at the top */
+  display: flex; /* Use Flexbox for layout */
+  flex-direction:column ;
+  align-items: start; /* Center items vertically */
+  justify-content: center; /* Center items horizontally */
+  padding: 10px; /* Padding for spacing */
+  background-color: #f9f9f9; /* Light gray background color */
+  border-radius: 6px; /* Rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Subtle shadow for depth */
+  width: 100%; /* Full width */
+  box-sizing: border-box; /* Include padding and border in the element's total width and height */
 }
-.booking-summary{
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
+.email {
+  width: 100%; /* Full width */
+  padding: 10px; /* Padding for spacing */
+  font-size: 16px; /* Font size */
+  border: 1px solid #ddd; /* Light gray border */
+  border-radius: 5px; /* Rounded corners */
+  box-sizing: border-box; /* Include padding and border in the element's total width and height */
+  margin-bottom: 10px; /* Margin at the bottom */
+  transition: border-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out; /* Smooth transition for border color and box shadow */
 }
+
+.email:focus {
+  border-color: #007bff; /* Blue border color on focus */
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /* Blue shadow on focus */
+  outline: none; /* Remove default focus outline */
+}
+
+.email::placeholder {
+  color: #999; /* Placeholder text color */
+  font-style: italic; /* Italic placeholder text */
+}
+
+.booking-summary {
+  display: flex; /* Use Flexbox for layout */
+  flex-wrap: wrap; /* Allow items to wrap */
+  align-items: center; /* Center items vertically */
+  justify-content: center; /* Center items horizontally */
+  padding: 20px; /* Padding for spacing */
+  margin: 10px 0; /* Margin at the top and bottom */
+  background-color: #f9f9f9; /* Light gray background color */
+  border-radius: 10px; /* Rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Subtle shadow for depth */
+  width: 100%; /* Full width */
+  box-sizing: border-box; /* Include padding and border in the element's total width and height */
+}
+
 .picture{
   height: 240px;
 }
@@ -83,6 +129,7 @@ body{
   height: 240px;
   align-items: center;
   justify-content: center;
+  
 }
 .room-detail{
   font-size: 17px;
@@ -95,6 +142,7 @@ body{
   justify-content: center;
   height: 240px;
 }
+
 .room-detail2{
   font-size: 17px;
   font-weight: bold;
@@ -121,6 +169,48 @@ body{
 }
 .type-price-time{
   color: rgb(255, 217, 0);
+}
+.update {
+  background-color: #007bff; /* Blue background color */
+}
+
+.update:hover {
+  background-color: #0056b3; /* Darker blue on hover */
+  transform: scale(1.05); /* Slightly enlarge the button on hover */
+}
+
+.update:active {
+  background-color: #004494; /* Even darker blue when active */
+  transform: scale(1); /* Reset the scale when active */
+}
+
+.save {
+  background-color: #28a745; /* Green background color */
+}
+
+.save:hover {
+  background-color: #218838; /* Darker green on hover */
+  transform: scale(1.05); /* Slightly enlarge the button on hover */
+}
+
+.save:active {
+  background-color: #1e7e34; /* Even darker green when active */
+  transform: scale(1); /* Reset the scale when active */
+}
+
+.checkin {
+  background-color: #ffc107; /* Yellow background color */
+  color: #333; /* Dark text color */
+}
+
+.checkin:hover {
+  background-color: #e0a800; /* Darker yellow on hover */
+  transform: scale(1.05); /* Slightly enlarge the button on hover */
+}
+
+.checkin:active {
+  background-color: #c69500; /* Even darker yellow when active */
+  transform: scale(1); /* Reset the scale when active */
 }
 .quantity{
   display: flex;
@@ -202,11 +292,7 @@ body{
   justify-content: center;
   column-gap: 20px;
 }
-.radio{
- display: flex;
- justify-content: center;
 
-}
 .choice{
   display: grid;
   grid-template-rows:20px 20px ;
@@ -226,6 +312,7 @@ body{
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: left;
   margin-top: 10px;
   border: rgb(204, 203, 203) solid 1.5px; 
   border-radius: 6px;
@@ -237,9 +324,11 @@ body{
   height: 230px;
   flex-direction: column;
   border-radius: 6px;
+  background-color: #f9f9f9;   
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);  
+  box-sizing: border-box;
   
 }
-
 .order-summary{
   font-size: 20px;
   font-weight: bold;
@@ -325,6 +414,11 @@ body{
   .reservation-containers {
     grid-template-rows: 50px auto;
     height: auto;
+  }
+}
+@media (max-width:792px) {
+  .section{
+    flex-wrap: wrap;
   }
 }
 

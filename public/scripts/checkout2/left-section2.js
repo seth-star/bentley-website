@@ -23,7 +23,12 @@ export function renderCheckout2() {
    ` 
    <div class="reservation-containers js-reservation-${matchingRoom.id}">
     <div class="reservation-date">
-        Booking made on: ${bookingDate}
+        <div>
+         Date: ${bookingDate}
+        </div>
+        <div>
+         Email:${cartItem.email}
+        </div>
       </div>
      <div class="booking-summary">
       <div class="image-container">
@@ -59,7 +64,6 @@ export function renderCheckout2() {
          ${cartItem.checkout}
          </div>
         </div>
-       
 
         <div class="quantity">
           <a class="infos" href="/images/conference-halls/extra-info-conference.jpg">infos</a>
@@ -116,7 +120,7 @@ export function renderCheckout2() {
             data-breakfast-id="${breakfastOption.breakfastId}">
 
           
-            <input type="radio" ${isChecking?'checked':''} name="${matchingRoom.id}" >
+            <input class="radio" type="radio" ${isChecking?'checked':''} name="${matchingRoom.id}" >
           
            <div class="choice">
             <div class="breakfast2 data-breakfast-id="${breakfastOption.breakfastId}">

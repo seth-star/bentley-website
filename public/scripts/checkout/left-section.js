@@ -19,9 +19,15 @@ export function renderCheckout() {
 
    ` 
    <div class="reservation-containers js-reservation-${matchingRoom.id}">
-    <div class="reservation-date">
-        Booked on: ${bookingDate}
+      <div class="reservation-date">
+       <div>
+         Date: ${bookingDate}
+       </div>
+       <div>
+         Email:${cartItem.email}
+        </div>
       </div>
+     
      <div class="booking-summary">
       <div class="image-container">
        <img src="/${matchingRoom.image}" class="picture">
@@ -47,7 +53,7 @@ export function renderCheckout() {
         <div>
           ${cartItem.checkout}
         </div>
-
+        
         <div class="quantity">
 
           <input class="input  js-input-${matchingRoom.id}" type="number">
@@ -106,7 +112,7 @@ export function renderCheckout() {
             data-breakfast-id="${breakfastOption.breakfastId}">
 
           
-            <input type="radio" ${isChecking?'checked':''} name="${matchingRoom.id}" >
+            <input class="radio" type="radio" ${isChecking?'checked':''} name="${matchingRoom.id}" >
           
            <div class="choice">
             <div class="breakfast data-breakfast-id="${breakfastOption.breakfastId}">
@@ -125,6 +131,7 @@ export function renderCheckout() {
    return optionHTML;
 
    } 
+
    
    
 

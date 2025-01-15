@@ -23,7 +23,6 @@ p{
   left: 0;
   right: 0;
   z-index: 200;
- /* background-color: rgb(114, 33, 33);*/
   background-color: rgb(211, 169, 169);
 }
 
@@ -33,12 +32,30 @@ p{
   align-items: center;
   justify-content: start;
 }
-.middle{
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: start;
-  background-color: rgb(114, 33, 33);
+.middle {
+  height: 100%; /* Full height */
+  display: flex; /* Use Flexbox for layout */
+  flex-direction: column; /* Arrange items in a column */
+  align-items: flex-start; /* Align items to the start horizontally */
+  justify-content: center; /* Center items vertically */
+  background-color: rgb(156, 91, 91); /* Background color */
+  padding: 20px; /* Padding for spacing */
+  border-radius: 10px; /* Rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  color: white; /* Text color */
+}
+
+.middle h1, .middle p {
+  margin: 10px 0; /* Margin for spacing */
+}
+
+.middle h1 {
+  font-size: 24px; /* Font size for headings */
+  font-weight: bold; /* Bold text for headings */
+}
+
+.middle p {
+  font-size: 16px; /* Font size for paragraphs */
 }
 .icons{
   height: 45%;
@@ -66,15 +83,20 @@ p{
 .cart-icon{
   height: 50%;
 }
-.cart-quantity{
-  font-weight: bold;
-  color: white;
- 
-}
-.cart-quantity2{
-  font-weight: bold;
-  color: white;
-  
+.cart-quantity {
+  display: inline-block;
+  padding: 5px 10px; /* Padding for spacing */
+  font-size: 16px; /* Font size */
+  font-weight: bold; /* Bold text */
+  color: white; /* White text color */
+  background-color: #007bff; /* Blue background color */
+  border-radius: 50%; /* Rounded corners for a circular shape */
+  text-align: center; /* Center the text */
+  min-width: 30px; /* Minimum width to ensure circular shape */
+  min-height: 30px; /* Minimum height to ensure circular shape */
+  line-height: 20px; /* Line height for vertical centering */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  margin-left: 10px; /* Margin to the left for spacing */
 }
 .container{
   display: flex;
@@ -92,22 +114,39 @@ p{
 .images-container{
   width: calc(500px * 5);
   animation: glisse 40s infinite;
-}
-.middle-container{
-  display: flex;
-  flex: 1;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  position: relative;
   height: 300px;
+}
+.middle-container {
+  display: flex; /* Use Flexbox for layout */
+  flex: 1; /* Allow the container to grow and shrink as needed */
+  flex-direction: column; /* Arrange items in a column */
+  align-items: center; /* Center items horizontally */
+  justify-content: center; /* Center items vertically */
+  position: relative; /* Position relative for any absolutely positioned children */
+  height: 300px; /* Set a fixed height */
+  padding: 20px; /* Add padding for spacing */
+  background-color: white; /* Light gray background color */
+  border-radius: 10px; /* Rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Subtle shadow for depth */
+  margin: 20px; /* Margin for spacing around the container */
+  text-align: center; /* Center the text */
 }
 .welcome{
   z-index: 100;
   margin-top: 120px;
   margin-bottom: 20px;
   color: brown;
+  padding: 10px 20px; /* Padding for spacing */
+  border-radius: 5px; /* Rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  font-weight: bold;
+  font-size: 20px;
+  text-align: center;
+  text-transform: uppercase; /* Uppercase text */
+  letter-spacing: 2px;
 }
+
+
 .images{
   float: left;
 }
@@ -174,17 +213,34 @@ p{
   justify-content: center;
   align-items: center;
 }
-.rooms-container{
+.rooms-container {
   display: flex;
-  flex-direction: column;
-  height: auto;
-  align-items: center;
-  justify-content: center;
-  margin-left: 6px;
+  flex-direction: column; /* Arrange items in a column */
+  align-items: center; /* Center items horizontally */
+  justify-content: center; /* Center items vertically */
+  padding: 20px; /* Padding for spacing */
+  margin: 10px; /* Margin for spacing around the container */
+  background-color: #f9f9f9; /* Light gray background color */
+  border-radius: 10px; /* Rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Subtle shadow for depth */
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out; /* Smooth transition for transform and box-shadow */
 }
+
+
 .images2{
   max-width: 100%;
-  min-width: 100%;
+  height: auto;
+  border-radius: 5px; /* Rounded corners */
+}
+.conference-room {
+  font-size: 18px; /* Font size */
+  font-weight: bold; /* Bold text */
+  color: #333; /* Dark gray color */
+  margin-top: 10px; /* Margin at the top */
+  margin-bottom: 10px; /* Margin at the bottom */
+  text-align: center; /* Center the text */
+  text-transform: uppercase; /* Uppercase text */
+  letter-spacing: 1px; /* Spacing between letters */
 }
 .room-description{
   width: 99%;
@@ -193,31 +249,88 @@ p{
   grid-template-columns: repeat(auto-fit ,minmax(40px,1fr));
   justify-content: center;
   align-items: center;
-  box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.15);
+  /*box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.15);*/
   position: relative;
+  padding: 10px; /* Padding for spacing */
+  background-color: #f9f9f9; /* Light gray background color */
+  border-radius: 5px; /* Rounded corners */
+   
+}
+.select-button {
+  display: block;
+  width: 100%; /* Full width */
+  padding: 10px; /* Padding for spacing */
+  font-size: 16px; /* Font size */
+  font-weight: bold; /* Bold text */
+  color: #333; /* Text color */
+  background-color: #fff; /* Background color */
+  border: 1px solid #ddd; /* Border color */
+  border-radius: 5px; /* Rounded corners */
+  cursor: pointer; /* Pointer cursor on hover */
+  transition: border-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out; /* Smooth transition for border color and box shadow */
 }
 
-.select-button{
-  width: 40px;
-  height: 28px;
-  border-radius:  5px;
-  border: none;
-  box-shadow: 1px 2px 3px rgba(0, 0, 0,0.3);
-  cursor: pointer;
+.select-button:hover {
+  border-color: #007bff; /* Blue border color on hover */
 }
 
-.book-now-button{
-  height: 30px;
-  border-radius: 15px;
-  background-color: orange;
-  border: none;
-  color: white;
-  font-weight: bold;
-  margin-right: 5px;
-  cursor: pointer;
+.select-button:focus {
+  outline: none; /* Remove default focus outline */
+  box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.5); /* Add custom focus outline with blue shadow */
 }
-.price{
-  margin-top: 20px;
+
+.select-button option {
+  font-weight: normal; /* Normal text weight for options */
+  color: #333; /* Text color for options */
+}
+.room-type {
+  font-size: 18px; /* Font size */
+  font-weight: bold; /* Bold text */
+  color: #333; /* Dark gray color */
+  margin-top: 10px; /* Margin at the top */
+  margin-bottom: 10px; /* Margin at the bottom */
+  text-align: center; /* Center the text */
+  text-transform: uppercase; /* Uppercase text */
+  letter-spacing: 1px; /* Spacing between letters */
+}
+
+
+.book-now-button {
+  display: inline-block;
+  padding: 10px 20px;
+  margin: 10px 0;
+  background-color: #007bff; /* Blue background color */
+  color: white; /* White text color */
+  font-size: 16px; /* Font size */
+  font-weight: bold; /* Bold text */
+  text-align: center; /* Center text */
+  border: none; /* Remove border */
+  border-radius: 5px; /* Rounded corners */
+  cursor: pointer; /* Pointer cursor on hover */
+  transition: background-color 0.3s ease-in-out, transform 0.2s ease-in-out; /* Smooth transition for background color and transform */
+}
+
+.book-now-button:hover {
+  background-color: #0056b3; /* Darker blue on hover */
+  transform: scale(1.05); /* Slightly enlarge the button on hover */
+}
+
+.book-now-button:active {
+  background-color: #004494; /* Even darker blue when active */
+  transform: scale(1); /* Reset the scale when active */
+}
+
+.book-now-button:focus {
+  outline: none; /* Remove default focus outline */
+  box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.5); /* Add custom focus outline */
+}
+.price {
+  font-size: 20px; /* Font size */
+  font-weight: bold; /* Bold text */
+  color: #ff5733; /* Orange color */
+  margin-top: 10px; /* Margin at the top */
+  margin-bottom: 10px; /* Margin at the bottom */
+  text-align: center; /* Center the text */
 }
 
 .room-description2{
@@ -226,7 +339,6 @@ p{
   display: grid;
   grid-template-columns: repeat(3 ,1fr);
   align-items: center;
-  box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.15);
   position: relative;
   
 }
@@ -258,30 +370,41 @@ p{
 .added{
   opacity: 1;
 }
-.extra-info,.extra-info2{
-  cursor: pointer;
-  margin-left: 20px;
-  font-size: 16px;
-  display: flex;
-  flex-direction: column;
-  color: rgb(88, 255, 219);
-  text-decoration: none;
+.extra {
+  padding: 10px; /* Padding for spacing */
+  color: #58ffdb; /* Text color */
+  /*background-color: brown; /* Background color */
+  margin-bottom: 10px; /* Margin at the bottom */
+  display: flex; /* Flexbox layout */
+  justify-content: center; /* Center content horizontally */
+  align-items: center; /* Center content vertically */
+  border-radius: 5px; /* Rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  width: auto; /* Automatic width */
+  height: auto; /* Automatic height */
 }
 
-.extra-info:hover{
-  text-decoration: underline; 
+.extra-info {
+  display: inline-block;
+  padding: 10px 20px; /* Padding for spacing */
+  font-size: 16px; /* Font size */
+  font-weight: bold; /* Bold text */
+  color: #007bff; /* Blue text color */
+  text-decoration: none; /* Remove underline */
+  border: 2px solid #007bff; /* Blue border */
+  border-radius: 5px; /* Rounded corners */
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out; /* Smooth transition for background color and text color */
 }
-.extra{
-  padding-top: 5px;
-  color: rgb(88, 255, 219);
-  /*height: 49px;*/
-  padding-right: 10px;
-  background-color: brown;
- /* width: 180px;*/
-  margin-bottom: 3px;
-  display: flex;
-  width: auto;
-  height: auto;
+
+.extra-info:hover {
+  background-color: #007bff; /* Blue background color on hover */
+  color: white; /* White text color on hover */
+  text-decoration: underline; /* Underline text on hover */
+}
+
+.extra-info:active {
+  background-color: #0056b3; /* Darker blue background color when active */
+  color: white; /* White text color when active */
 }
 
 .bedroom{
@@ -291,27 +414,23 @@ p{
   margin-top: 10px;
 }
 .right2,.right1{
-  height: 80%;
   display: flex;
+  justify-content: center;
   align-items: center;
-  position: relative;
-  padding: 2px;
-  cursor: pointer;
-  color: white;
-  text-decoration: none;
-  width: 250px;
-  background-color: rgb(114, 33, 33);
-  margin-bottom: 3px;
+  padding: 10px;
+  margin: 10px;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  background-color: #f9f9f9;
+  
+  
 }
 .right2:hover{
   background-color: rgb(235, 201, 181);
   cursor: pointer;
 }
-.right1{
-  width: 160px;
-}
 .right1:hover{
-  background-color: rgb(224, 96, 22);
+  background-color: rgb(235, 201, 181);
   cursor: pointer;
 }
 .footer {

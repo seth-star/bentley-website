@@ -40,6 +40,9 @@ export function checkinDate2(conferenceId) {
 
        if (document.querySelector('.js-time')) {
         matchingItem.time = String(document.querySelector('.js-time').value)
+       };
+       if (document.querySelector('.js-email2')) {
+        matchingItem.email = String(document.querySelector('.js-email2').value)
        } 
     }
    
@@ -97,10 +100,11 @@ export function addToCartConference(conferenceId) {
       conferenceId: conferenceId,
       quantity: 1,
       breakfastId: '1a',
-      checkin: '<input class="js-checkin" type="date">',
-      time:'<input class="js-time" type="time">',
-      checkout: '<input class="js-checkout" type="date">',
-      pax:'<input type="number" class="pax js-pax">'
+      checkin: '<input class="checkin js-checkin" type="date">',
+      time:'<input class="time js-time" type="time">',
+      checkout: '<input class=" checkin js-checkout" type="date">',
+      pax:'<input type="number" class="pax js-pax">',
+      email: '<input class="email js-email2" type="email" placeholder="Enter your email" >'
     });
   }
  saveToStorage();

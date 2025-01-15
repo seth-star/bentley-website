@@ -59,7 +59,7 @@ rooms.forEach((room)=> {
         
       <div class="room-description">
         <div>
-          <p>${room.type}</p>
+          <p class="room-type">${room.type}</p>
         </div>
        <div class="price">R${room.priceCents}</div>
        <select class="select-button js-select-${room.id}">
