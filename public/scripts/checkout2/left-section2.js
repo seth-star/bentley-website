@@ -24,10 +24,10 @@ export function renderCheckout2() {
    <div class="reservation-containers js-reservation-${matchingRoom.id}">
     <div class="reservation-date">
         <div>
-         Date: ${bookingDate}
+        <span class="date"> Date:</span> ${bookingDate}
         </div>
         <div>
-         Email:${cartItem.email}
+         <span class="date">Email:</span>${cartItem.email}
         </div>
       </div>
      <div class="booking-summary">

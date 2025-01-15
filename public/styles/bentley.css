@@ -328,7 +328,7 @@ p{
   font-size: 20px; /* Font size */
   font-weight: bold; /* Bold text */
   color: #ff5733; /* Orange color */
-  margin-top: 10px; /* Margin at the top */
+  margin-top: 25px; /* Margin at the top */
   margin-bottom: 10px; /* Margin at the bottom */
   text-align: center; /* Center the text */
 }
@@ -379,7 +379,6 @@ p{
   justify-content: center; /* Center content horizontally */
   align-items: center; /* Center content vertically */
   border-radius: 5px; /* Rounded corners */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
   width: auto; /* Automatic width */
   height: auto; /* Automatic height */
 }

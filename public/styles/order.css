@@ -1,69 +1,30 @@
 body{
   padding-top: 150px;
   font-family:initial;
- /* background-color: #f4f4f4;
-  /*margin: 0;
- /* display: flex;
-  /*justify-content: center;
-  align-items: center;*/
+  justify-content: center;
+  align-items: center;
   /*min-height: 100vh;*/
 }
 .header{
-  /*height: 70px;
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  background-color: rgb(126, 62, 62);
-  display: flex;
-  align-items: center;*/
   height: 70px;
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
-  margin:0 auto;
   display: flex;
   align-items: center;
   justify-content: center;
  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
-  /* Ens
-  
-}
-.left{
-  display: flex;
-  height: 100%;
-  width: 495px;
-  color: white;
-}
-.center{
-  display: flex;
-  flex: 1;
-  position: relative;
-}
-.right{
-  width: 495px;
-  height: 100%;
-}
-.container2{
-  /*display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  background-color: white;
-  width: 350px;
-  border-left: rgb(213, 217, 217) solid 1px;
-  border-bottom: rgb(213, 217, 217) solid 1px;
-  border-right: rgb(213, 217, 217) solid 1px;
-  */
+ margin: auto ;
+
   width: 100%;
   max-width: 800px;
   /*padding: 20px;*/
   background-color: #fff;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
-  box-sizing: border-box;
+  /*box-sizing: border-box;*/
+  
 }
 .welcome{
   z-index: 100;
@@ -98,13 +59,6 @@ body{
 
 }
 .head-section{
-  /*display: grid;
-  grid-template-columns: 300px 200px 150px 350px;
-  width: 1000px;
-  justify-content: space-between;
-  height: 85px;
-  align-items: center;
-  background-color: rgb(212, 212, 212);*/
   display: flex;
   justify-content: space-between;
   padding: 10px;
@@ -190,22 +144,7 @@ body{
  font-size: 20px;
  
 }
-/*.btn{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: rgb(126, 62, 62);
-  color: white;
-  width: 200px;
-  height: 50px;
-  border-radius: 10px;
-  font-size: 20px;
-  margin: 0 auto;
-  cursor: pointer;
-}
-.btn:hover{
-  background-color: rgb(160, 160, 144);
-}*/
+
 .btn {
   display: inline-block;
   padding: 10px 20px; /* Padding for spacing */
@@ -256,6 +195,10 @@ body{
   .head-section{
     font-size: 16px;
   }
+  .header,.head-section{
+   width: 274px;
+  }
+  
 }
 @media (max-width:696px) {
   .main-section{
