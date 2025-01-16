@@ -72,11 +72,9 @@ export function renderRightSection2() {
 
        <div class="place-your-order">
           <button class="place-your-order js-place-order2">Place your order</button>
-       </div>;
+       </div>
        `
        document.querySelector('.js-right-section').innerHTML = html;
-
-       
           document.querySelector('.js-place-order2').addEventListener('click',async ()=>{
                
            try{

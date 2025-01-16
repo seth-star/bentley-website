@@ -106,8 +106,8 @@ body{
 
 .booking-summary {
   display: flex; /* Use Flexbox for layout */
-  flex-wrap: wrap; /* Allow items to wrap */
-  align-items: center; /* Center items vertically */
+  /*flex-wrap: wrap; /* Allow items to wrap */
+  align-items: start; /* Center items vertically */
   justify-content: center; /* Center items horizontally */
   padding: 20px; /* Padding for spacing */
   margin: 10px 0; /* Margin at the top and bottom */
@@ -357,6 +357,7 @@ body{
   display: flex;
   flex-direction: column;
   align-items: start;
+  justify-content: start;
   margin-top: 10px;
   border: rgb(204, 203, 203) solid 1.5px; 
   border-radius: 6px;
@@ -372,7 +373,7 @@ body{
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);  
   box-sizing: border-box;
   padding: 15px;
-  height: 270px;
+  height: 300px;
 }
 .date {
   font-size: 20px; /* Font size */
@@ -506,6 +507,11 @@ body{
     margin-top: 5px;
   }
 }
+@media (max-width:1200px) {
+  .booking-summary{
+   flex-wrap: wrap;
+  }
+}
 @media (max-width: 430px) {
   .center{
     justify-content: center;
@@ -562,7 +568,10 @@ body{
     font-size: 14px;
     justify-content: center;
   }
-  .room-detail{
+  .left-section{
+    border: none;
+  }
+  .room-detail,.room-detail2{
     font-size: 12px;
   }
   .first-option{

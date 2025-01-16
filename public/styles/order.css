@@ -15,16 +15,34 @@ body{
   align-items: center;
   justify-content: center;
  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
- margin: auto ;
-
+  margin: auto ;
   width: 100%;
   max-width: 800px;
   /*padding: 20px;*/
   background-color: #fff;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
-  /*box-sizing: border-box;*/
-  
+  box-sizing: border-box;
+}
+.header .logo {
+  font-size: 24px; /* Font size for the logo */
+  font-weight: bold; /* Bold text for the logo */
+}
+
+.header .nav {
+  display: flex; /* Use Flexbox for layout */
+  gap: 20px; /* Gap between navigation items */
+}
+
+.header .nav a {
+  color: white; /* White text color */
+  text-decoration: none; /* Remove underline */
+  font-size: 16px; /* Font size for navigation items */
+  transition: color 0.3s ease-in-out; /* Smooth transition for color */
+}
+
+.header .nav a:hover {
+  color: #007bff; /* Blue color on hover */
 }
 .welcome{
   z-index: 100;
@@ -58,15 +76,6 @@ body{
   row-gap: 40px;
 
 }
-.head-section{
-  display: flex;
-  justify-content: space-between;
-  padding: 10px;
-  background-color: #007bff;
-  color: white;
-  cursor: pointer;
-  font-size: 18px;
-  }
 .container {
   width: 100%;
   max-width: 800px;
@@ -195,9 +204,6 @@ body{
   .head-section{
     font-size: 16px;
   }
-  .header,.head-section{
-   width: 274px;
-  }
   
 }
 @media (max-width:696px) {
@@ -227,5 +233,53 @@ body{
   }
   .image-room{
     width: 300px;
+  }
+}
+@media (max-width: 1120px) {
+  .header {
+    flex-direction: column; /* Arrange items in a column */
+    align-items: flex-start; /* Align items to the start horizontally */
+  }
+
+  .header .nav {
+    flex-direction: column; /* Arrange navigation items in a column */
+    width: 100%; /* Full width */
+    gap: 10px; /* Reduce gap between navigation items */
+  }
+
+  .header .nav a {
+    font-size: 18px; /* Increase font size for better readability */
+  }
+}
+
+/* Responsive styles for screens smaller than 768px */
+@media (max-width: 768px) {
+  .header {
+    padding: 15px; /* Reduce padding for smaller screens */
+  }
+  .header .logo {
+    font-size: 20px; /* Reduce font size for the logo */
+  }
+
+  .header .nav a {
+    font-size: 16px; /* Adjust font size for navigation items */
+  }
+}
+
+/* Responsive styles for screens smaller than 480px */
+@media (max-width: 480px) {
+  .header {
+    padding: 10px; /* Further reduce padding for smaller screens */
+  }
+
+  .header .logo {
+    font-size: 18px; /* Further reduce font size for the logo */
+  }
+  .header .nav {
+    gap: 5px; /* Further reduce gap between navigation items */
+  }
+
+  .header .nav a {
+    font-size: 14px; /* Further adjust font size for navigation items */
   }
 }
