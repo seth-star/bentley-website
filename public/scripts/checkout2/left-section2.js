@@ -68,10 +68,11 @@ export function renderCheckout2() {
         <div class="quantity">
           <a class="infos" href="/images/conference-halls/extra-info-conference.jpg">infos</a>
          <div class="pax-div">
-          <div>Pax :</div>
           <div class="pax-option js-pax-option js-pax-option-${matchingRoom.id}" data-conference-id="${matchingRoom.id}">
              ${cartItem.pax}
+             <div>Pax</div>
           </div>
+          
          </div>
             
           

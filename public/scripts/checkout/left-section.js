@@ -69,9 +69,10 @@ export function renderCheckout() {
           <div class="save js-save js-save-${matchingRoom.id}"data-room-id="${matchingRoom.id}">Save</div>
 
           <div class="pax-option">
-            <div>Pax :</div>
             ${cartItem.pax}
+            <div>Pax</div>
           </div>
+          
           <div class="delete js-delete" data-room-id="${matchingRoom.id}">Delete</div>
         </div>
 
