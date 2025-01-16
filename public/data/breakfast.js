@@ -13,11 +13,11 @@ export const breakfastOptions2 = [{
   
  },{
   breakfastId:'3c',
-  persons:'Overnight Conference (Single)',
+  persons:'Overnight Conference:Single',
   priceCents: 1600
  },{
   breakfastId:'4d',
-  persons:  'Overnight Confrernce (Sharing)',
+  persons:'Overnight Conference:Sharing',
   priceCents: 1350
   
  }];

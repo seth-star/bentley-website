@@ -312,8 +312,8 @@ body{
   align-items: center; /* Center items vertically */
   justify-content: center; /* Center items horizontally */
   width: 260px;
-  column-gap: 10px; /* Gap between columns */
-  row-gap: 20px; /* Gap between rows */
+  column-gap: 5px; /* Gap between columns */
+  row-gap: 10px; /* Gap between rows */
   padding: 10px; /* Padding for spacing */
   background-color: #f9f9f9; /* Light gray background color */
   border: 1px solid #ddd; /* Light gray border */
@@ -369,22 +369,16 @@ body{
   flex-direction: column;
   border-radius: 6px;
   background-color: #f9f9f9;   
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);  
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);  
   box-sizing: border-box;
+  padding: 15px;
+  height: 270px;
 }
 .date {
   font-size: 20px; /* Font size */
   font-weight: bold; /* Bold text */
   color: #333; /* Dark gray color */
   margin-right: 5px; /* Margin to the right for spacing */
-}
-
-.order-summary{
-  font-size: 20px;
-  font-weight: bold;
-  padding-left: 20px;
-  display: flex;
-  align-items: center; 
 }
 .accommodation-price,.accommodation-price1{
   display: flex;
@@ -394,6 +388,20 @@ body{
   align-items: center;
   font-size: 18px;
 }
+.order-summary {
+  font-size: 20px; /* Font size */
+  font-weight: bold; /* Bold text */
+  padding: 10px 20px; /* Padding for spacing */
+  margin: 10px 0; /* Margin at the top and bottom */
+  display: flex; /* Use Flexbox for layout */
+  align-items: center; /* Center items vertically */
+  justify-content: space-between; /* Space between items */
+  background-color: #f9f9f9; /* Light gray background color */
+  border-radius: 6px; /* Rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+  color: #333; /* Dark gray color */
+}
+
 .div{
   display: grid;
   justify-content: center;
@@ -426,6 +434,7 @@ body{
   border-radius: 5px; /* Rounded corners */
   cursor: pointer; /* Pointer cursor on hover */
   transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out; /* Smooth transition for background color and box-shadow */
+  
 }
 
 .place-your-order:hover {
@@ -500,11 +509,12 @@ body{
 @media (max-width: 430px) {
   .center{
     justify-content: center;
-    font-size: 18px;
+    font-size: 20pxpx;
     font-weight: bold;
    }
    .rooms{
-     font-weight: 400;
+     font-weight: bold;
+     font-size: 20px;
    }
 }
 
