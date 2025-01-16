@@ -107,7 +107,7 @@ body{
 .booking-summary {
   display: flex; /* Use Flexbox for layout */
   /*flex-wrap: wrap; /* Allow items to wrap */
-  align-items: start; /* Center items vertically */
+  align-items: center; /* Center items vertically */
   justify-content: center; /* Center items horizontally */
   padding: 20px; /* Padding for spacing */
   margin: 10px 0; /* Margin at the top and bottom */

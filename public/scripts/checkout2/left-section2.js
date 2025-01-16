@@ -34,7 +34,7 @@ export function renderCheckout2() {
       <div class="image-container">
        <img src="/${matchingRoom.image}" class="picture">
       </div>
-      <div class="room-detail2">
+      <div class="room-detail">
         <div class="type-price2">
             ${matchingRoom.type} 
         </div>
