@@ -3,7 +3,8 @@ body{
   font-family:initial;
   justify-content: center;
   align-items: center;
-  /*min-height: 100vh;*/
+  display: grid;
+  display: inline-block;
 }
 .header{
   height: 70px;
@@ -14,18 +15,7 @@ body{
   display: flex;
   align-items: center;
   justify-content: center;
- box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
-  margin: auto ;
- /* max-width: 800px;*/
-  /*padding: 20px;*/
-  background-color: #fff;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
-  box-sizing: border-box;
-}
-.header .logo {
-  font-size: 24px; /* Font size for the logo */
-  font-weight: bold; /* Bold text for the logo */
+ box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
 }
 
 .header .nav {
@@ -61,23 +51,20 @@ body{
 .main{
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
 
 }
 .section1{
   display: flex;
   flex-direction: column;
   border: 2px solid rgb(213, 217, 217);
-  
   border-radius: 10px;
-  width: 1000px;
-  margin: 100px auto;
   margin-top: 10px;
   row-gap: 40px;
-
+  width: 700px;
 }
 .container {
-  width: 100%;
-  max-width: 800px;
   padding: 20px;
   background-color: #fff;
   border-radius: 10px;
@@ -150,33 +137,9 @@ body{
  grid-template-rows: repeat(5,1fr);
  padding-left: 10px;
  font-size: 20px;
- 
 }
 
-.btn {
-  display: inline-block;
-  padding: 10px 20px; /* Padding for spacing */
-  margin: 10px 0; /* Margin for spacing */
-  background-color: #007bff; /* Blue background color */
-  color: white; /* White text color */
-  font-size: 16px; /* Font size */
-  font-weight: bold; /* Bold text */
-  text-align: center; /* Center text */
-  border: none; /* Remove border */
-  border-radius: 5px; /* Rounded corners */
-  cursor: pointer; /* Pointer cursor on hover */
-  transition: background-color 0.3s ease-in-out, transform 0.2s ease-in-out; /* Smooth transition for background color and transform */
-}
 
-.btn:hover {
-  background-color: #0056b3; /* Darker blue on hover */
-  transform: scale(1.05); /* Slightly enlarge the button on hover */
-}
-
-.btn:active {
-  background-color: #004494; /* Even darker blue when active */
-  transform: scale(1); /* Reset the scale when active */
-}
 @media (max-width:320px) {
  .header,.head-section{
   width: 250px;
