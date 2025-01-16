@@ -1,10 +1,14 @@
 body{
   padding-top: 150px;
   font-family:initial;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   display: flex;
+  flex-direction: column;
+  min-height: 100vh;
   overflow-x: hidden;
+  box-sizing: border-box;
+  
 }
 .header{
   height: 70px;
@@ -15,10 +19,10 @@ body{
   display: flex;
   align-items: center;
   justify-content: center;
- box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
-
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+  z-index: 1000;
+  background-color: white;
 }
-
 
 .welcome{
   z-index: 100;
@@ -45,32 +49,34 @@ body{
 .section1{
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
   border: 2px solid rgb(213, 217, 217);
   border-radius: 10px;
- /* margin-top: 10px;*/
+  margin-top: 10px;
   row-gap: 40px;
   width: 800px;
-  border: #007bff solid 2px;
+  margin-left: 20px;
 }
 .container {
   padding: 20px;
   background-color: #fff;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  /*box-sizing: border-box;*/
-  max-width: 100%;
-  margin-left: 2px;
+  
+  
   
 }
 .head-section {
   display: flex;
   justify-content: space-between;
   padding: 10px;
+  column-gap: 30px;
   background-color: #007bff;
   color: white;
   cursor: pointer;
-  height: 50px;
-  font-size: 20px;
+  
+  font-size: 18px;
 }
 
 .order-placed, .total {
@@ -86,15 +92,6 @@ body{
 
 .order-details {
   margin-top: 10px;
-}
-
-.order-details ul {
-  list-style-type: none;
-  padding: 0;
-}
-
-.order-details li {
-  margin-bottom: 5px;
 }
 .total{
   display: flex;
@@ -143,12 +140,6 @@ body{
  } 
 }
 
-@media (max-width: 600px) {
-  .btn {
-    width: 100%; /* Make buttons full-width on small screens */
-    padding: 15px; /* Increase padding for better touch targets */
-  }
-}
 @media (max-width: 1120px) {
   .head-section {
     flex-direction: column;
@@ -222,7 +213,7 @@ body{
     padding: 15px; /* Reduce padding for smaller screens */
   }
   .header .logo {
-    font-size: 20px; /* Reduce font size for the logo */
+    font-size: 80px; /* Reduce font size for the logo */
   }
 
   .header .nav a {
