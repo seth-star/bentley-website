@@ -279,7 +279,7 @@ body{
   color: #333; /* Dark gray color */
 }
 .head-option {
-  font-size: 20px; /* Font size */
+  font-size: 17px; /* Font size */
   font-weight: bold; /* Bold text */
   display: flex; /* Use Flexbox for layout */
   align-items: center; /* Center items vertically */
@@ -325,23 +325,7 @@ body{
   box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.3); /* Subtle shadow for depth */
   margin-top: 8px; /* Margin at the top */
 }
-/*
-.first-option2 {
-  display: grid; 
-  grid-template-columns: 30px 250px;
-  align-items: center; 
-  justify-content: center;
-  column-gap: 5px; 
-  row-gap: 10px;
-  padding: 10px;
-  background-color: #f9f9f9; 
-  border: 1px solid #ddd;
-  border-radius: 6px;
-  box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.3); 
-  margin-top: 8px; 
-  width: 260px;
-}
-*/
+
 .choice {
   display: grid; /* Use CSS Grid for layout */
   grid-template-rows: 20px 20px; /* Define rows */
