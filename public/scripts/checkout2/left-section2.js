@@ -34,35 +34,27 @@ export function renderCheckout2() {
       <div class="image-container">
        <img src="/${matchingRoom.image}" class="picture">
       </div>
-      <div class="room-detail">
+      <div class="room-detail2">
         <div class="type-price2">
             ${matchingRoom.type} 
         </div>
         <div class="type-price2" >
           <div class="checkin-out">
-           First Day:
+           First Day: ${cartItem.checkin}
           </div>
-         <div >
-         ${cartItem.checkin}
-         </div>
+         
         </div>
         
         <div class="type-price-time" >
           <div class="checkin-out">
-           Arrival Time:
+           Arrival Time: ${cartItem.time}
           </div>
-         <div class="number-rooms">
-           ${cartItem.time}
-         </div>
         </div>
 
         <div class="type-price2" >
           <div class="checkin-out">
-           Last Day:
+           Last Day: ${cartItem.checkout}
           </div>
-         <div >
-         ${cartItem.checkout}
-         </div>
         </div>
 
         <div class="quantity">

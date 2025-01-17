@@ -26,7 +26,11 @@ const userSchema = new Schema({
     required:true
   },
   id:{
-    type: Number,
+    type: String,
+    required:true
+  },
+  nationality:{
+    type: String,
     required:true
   },
   address:{
