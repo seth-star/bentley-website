@@ -91,6 +91,7 @@ export function renderRightSection() {
           console.log( error);
           
         }
+        localStorage.removeItem('cart');
         window.location.href ='/submit2/';
 
        });

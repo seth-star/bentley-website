@@ -91,7 +91,7 @@ export function renderRightSection2() {
                   });
                  
                   const order2 = await response.json();
-                
+                   localStorage.removeItem('cart2');
                } catch (error){
                  console.log( error);
                  
