@@ -134,10 +134,11 @@ export function removeFromCart(roomId) {
   cart.forEach((cartItem)=>{
    if (cartItem.roomId !== roomId) {
     newCart.push(cartItem);
-    cart = newCart;
+    
    }
    
   });
+  cart = newCart;
   saveToStorage();
 }
 

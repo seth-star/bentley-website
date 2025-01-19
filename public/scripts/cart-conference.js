@@ -130,10 +130,11 @@ export function removeFromCart2(conferenceId) {
  cart2.forEach((cartItem)=>{
   if (cartItem.conferenceId !== conferenceId) {
    newCart.push(cartItem);
-   cart2 = newCart;
+   
   }
   
  });
+ cart2 = newCart;
  saveToStorage();
 }
 
