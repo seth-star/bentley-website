@@ -13,7 +13,6 @@ export function renderRightSection() {
    const roomPrice = getRoom(cartItem).priceCents;
    const roomQuantity = cartItem.quantity;
   
-   
    const checkinDate = cartItem.checkin;
    const checkoutDate = cartItem.checkout;
    const startTimestamp = new Date(checkinDate).getTime();
@@ -23,8 +22,8 @@ export function renderRightSection() {
    accommodation += roomPrice * roomQuantity*differenceDays;
   
    const option = getOption(cartItem).persons === 'all in the room(s)'
-   ? breakfast += 95*cartItem.pax 
-   : breakfast += getOption(cartItem).priceCents;
+   ? breakfast += 95*cartItem.pax
+   : breakfast += getOption(cartItem).priceCents*differenceDays;
    total = accommodation+breakfast ;
    
    let html =
