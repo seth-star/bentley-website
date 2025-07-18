@@ -72,7 +72,7 @@ body{
   font-size: 20px; /* Font size */
   color: brown; /* Text color */
   font-weight: bold; /* Bold text */
-  margin-top: 10px; /* Margin at the top */
+  
   display: flex; /* Use Flexbox for layout */
   flex-direction:column ;
   align-items: start; /* Center items vertically */
@@ -348,14 +348,12 @@ body{
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin-top: 10px;
-  border: rgb(204, 203, 203) solid 1.5px; 
+  margin-top: 0px;
   border-radius: 6px;
-  padding: 2px;
+  
 }
 .right-section,.right-section2{
-  margin-top: 10px;
-  border: rgb(204, 203, 203) solid 1.5px; 
+ 
   display: flex;
   height: 230px;
   flex-direction: column;
@@ -363,8 +361,9 @@ body{
   background-color: #f9f9f9;   
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);  
   box-sizing: border-box;
-  padding: 15px;
+  padding: 20px;
   height: 350px;
+  margin-top: 22px;
 }
 .date {
   font-size: 20px; /* Font size */
@@ -467,6 +466,7 @@ body{
     height: auto;
   }
 }
+
 @media (max-width:792px) {
   .section,.section2{
     flex-wrap: wrap;
@@ -484,6 +484,7 @@ body{
     height: auto;
     padding-left: 10px;
     margin-top: 5px;
+
   }
 }
 
@@ -559,6 +560,7 @@ body{
   .reservation-date{
     font-size: 14px;
     justify-content: center;
+    
   }
   .left-section{
     border: none;
