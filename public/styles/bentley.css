@@ -408,11 +408,10 @@ p{
 
 .bedroom{
   color: white;
-  display: flex;
+  display: grid;
   margin-left: 5px;
   margin-top: 10px;
   justify-content: center;
-  flex-direction: column;
 }
 .right2,.right1{
   display: flex;
@@ -423,9 +422,7 @@ p{
   border-radius: 5px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
   background-color: #f9f9f9;
-  width: 300px;
-  
-  
+
 }
 .right2:hover{
   background-color: rgb(235, 201, 181);
