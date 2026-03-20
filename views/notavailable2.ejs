@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Order Details</title>
+  <link rel="stylesheet" href="/styles/available.css">
+</head>
+
+<body>
+  <div class="container">
+    <h1>Order Details</h1>
+    <div class="order-info">
+      <div class="order-item">
+        <p>Order Placed On:</p>
+        <p><%= orders.updatedAt.toDateString() %></p>
+      </div>
+      <div class="order-item">
+        <p>Total Amount:</p>
+        <p>R<%= orders.total %></p>
+       
+      </div>
+       <div class="order-item">
+         <P>Order not available.</P>
+         <p>Please try again later.</p>
+       </div>
+    </div>
+    
+  </div>
+ 
+</body>
+</html>
+

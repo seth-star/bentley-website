@@ -1,0 +1,240 @@
+body{
+  padding-top: 150px;
+  font-family:initial;
+  justify-content: flex-start;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  overflow-x: hidden;
+  box-sizing: border-box;
+  
+}
+.header{
+  height: 70px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+  z-index: 1000;
+  background-color: white;
+}
+
+.welcome{
+  z-index: 100;
+  margin-top: 100px;
+  font-size: 18px;
+  color: brown;
+  font-weight: bold;
+  margin-left: 40px;
+}
+
+.logo{
+  width: 250px;
+  margin-top: 0px;
+  z-index: 100;
+}
+
+.main{
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+}
+.section1{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid rgb(213, 217, 217);
+  border-radius: 10px;
+  margin-top: 10px;
+  row-gap: 40px;
+  width: 800px;
+  margin-left: 20px;
+}
+.container {
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  
+  
+  
+}
+.head-section {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  column-gap: 30px;
+  background-color: #007bff;
+  color: white;
+  cursor: pointer;
+  
+  font-size: 18px;
+}
+
+.order-placed, .total {
+  display: flex;
+  flex-direction: column;
+}
+
+.details-section {
+  display: none;
+  padding: 10px;
+  background-color: #f9f9f9;
+}
+
+.order-details {
+  margin-top: 10px;
+}
+.total{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+  height: 100%;
+  padding-left: 10px;
+}
+.order-id{
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  align-items: start;
+  justify-content: center;
+ }  
+.main-section{
+  display: grid;
+  grid-template-columns: 300px 300px;
+  row-gap: 20px;
+  column-gap: 20px;
+}
+.image-contain{
+  max-width: 100%;
+  min-height: 100%;
+}
+.image-room{
+  width: 300px;
+  
+}
+.details-container{
+ display: grid;
+ grid-template-rows: repeat(5,1fr);
+ padding-left: 10px;
+ font-size: 20px;
+}
+@media (max-width: 768px) {
+  .container {
+    padding: 10px; /* Adjust padding for smaller screens */
+  }
+}
+
+@media (max-width:320px) {
+ .header,.head-section{
+  width: 250px;
+ } 
+}
+
+@media (max-width: 1120px) {
+  .head-section {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .order-placed, .total {
+    margin-bottom: 10px;
+  }
+}
+@media (max-width:315px) {
+  .details-container{
+    font-size: 16px;
+   }
+}
+@media (max-width:274px) {
+  .head-section{
+    font-size: 16px;
+  }
+  
+}
+@media (max-width:696px) {
+  .main-section{
+    justify-content: left;
+  }
+}
+@media (max-width:696px) {
+  .details-container{
+    font-size: 16px;
+  }
+}
+@media (max-width:583px) {
+  .main-section{
+    font-size: 16px;
+    grid-template-columns: 200px 200px;
+  }
+  .image-room{
+    width: 200px;
+  }
+}
+@media (max-width:435px) {
+  .main-section{
+    
+    display: flex;
+    flex-direction: column;
+  }
+  .image-room{
+    width: 300px;
+  }
+}
+@media (max-width: 1120px) {
+  .header {
+    flex-direction: column; /* Arrange items in a column */
+    align-items: flex-start; /* Align items to the start horizontally */
+  }
+
+  .header .nav {
+    flex-direction: column; /* Arrange navigation items in a column */
+    width: 100%; /* Full width */
+    gap: 10px; /* Reduce gap between navigation items */
+  }
+
+  .header .nav a {
+    font-size: 18px; /* Increase font size for better readability */
+  }
+}
+
+/* Responsive styles for screens smaller than 768px */
+@media (max-width: 768px) {
+  .header {
+    padding: 15px; /* Reduce padding for smaller screens */
+  }
+  .header .logo {
+    font-size: 80px; /* Reduce font size for the logo */
+  }
+
+  .header .nav a {
+    font-size: 16px; /* Adjust font size for navigation items */
+  }
+}
+
+/* Responsive styles for screens smaller than 480px */
+@media (max-width: 480px) {
+  .header {
+    padding: 10px; /* Further reduce padding for smaller screens */
+  }
+
+  .header .logo {
+    font-size: 18px; /* Further reduce font size for the logo */
+  }
+  .header .nav {
+    gap: 5px; /* Further reduce gap between navigation items */
+  }
+
+  .header .nav a {
+    font-size: 14px; /* Further adjust font size for navigation items */
+  }
+}

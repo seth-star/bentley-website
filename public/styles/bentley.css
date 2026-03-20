@@ -1,0 +1,468 @@
+body{
+  margin: 0;
+  padding: 0;
+  padding-top: 55px; 
+  font-family: initial,Arial, Helvetica, sans-serif;
+  display: block;
+  justify-content: center;
+  align-items: center;
+}
+p{
+  font-weight: bold;
+  font-size: 16px;
+  margin: 0px;
+}
+
+.header{
+  height: 55px;
+  display: flex;
+  align-items: start;
+  border:  rgb(211, 169, 169) solid 2px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 200;
+  background-color: rgb(211, 169, 169);
+}
+
+.start{
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: start;
+}
+.middle {
+  height: 100%; /* Full height */
+  display: flex; /* Use Flexbox for layout */
+  flex-direction: column; /* Arrange items in a column */
+  align-items: flex-start; /* Align items to the start horizontally */
+  justify-content: center; /* Center items vertically */
+  background-color: rgb(156, 91, 91); /* Background color */
+  padding: 20px; /* Padding for spacing */
+  border-radius: 10px; /* Rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  color: white; /* Text color */
+}
+
+.middle h1, .middle p {
+  margin: 10px 0; /* Margin for spacing */
+}
+
+.middle h1 {
+  font-size: 24px; /* Font size for headings */
+  font-weight: bold; /* Bold text for headings */
+}
+
+.middle p {
+  font-size: 16px; /* Font size for paragraphs */
+}
+.icons{
+  height: 45%;
+  padding: 4px;
+  cursor: pointer;
+}
+.icons:hover{
+  border: white solid 1px;
+  padding: 8px;
+}
+
+.restaurant-bar{
+  margin-left: 5px;
+  cursor: pointer;
+  color: white;
+  font-size: 16px;
+}
+.restaurant-bar:hover{
+  color: rgb(255, 208, 0);
+  text-decoration: underline;
+}
+.restaurant-bar:active{
+  color: rgb(88, 255, 219);
+}
+.cart-icon{
+  height: 50%;
+}
+.cart-quantity {
+  display: inline-block;
+  padding: 5px 10px; /* Padding for spacing */
+  font-size: 16px; /* Font size */
+  font-weight: bold; /* Bold text */
+  color: white; /* White text color */
+  background-color: #007bff; /* Blue background color */
+  border-radius: 50%; /* Rounded corners for a circular shape */
+  text-align: center; /* Center the text */
+  min-width: 30px; /* Minimum width to ensure circular shape */
+  min-height: 30px; /* Minimum height to ensure circular shape */
+  line-height: 20px; /* Line height for vertical centering */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  margin-left: 10px; /* Margin to the left for spacing */
+}
+.container{
+  display: flex;
+  align-items: center;
+}
+.left-container, .right-container{
+  display: grid;
+  overflow: hidden;
+  height: 300px;
+  width: 500px;
+}
+.logo{
+  width: 250px;
+}
+.images-container{
+  width: calc(500px * 5);
+  animation: glisse 40s infinite;
+  height: 300px;
+}
+.middle-container {
+  display: flex; /* Use Flexbox for layout */
+  flex: 1; /* Allow the container to grow and shrink as needed */
+  flex-direction: column; /* Arrange items in a column */
+  align-items: center; /* Center items horizontally */
+  justify-content: center; /* Center items vertically */
+  position: relative; /* Position relative for any absolutely positioned children */
+  height: 300px; /* Set a fixed height */
+  padding: 20px; /* Add padding for spacing */
+  background-color: white; /* Light gray background color */
+  border-radius: 10px; /* Rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Subtle shadow for depth */
+  margin: 20px; /* Margin for spacing around the container */
+  text-align: center; /* Center the text */
+}
+.welcome{
+  z-index: 100;
+  margin-top: 120px;
+  margin-bottom: 20px;
+  color: brown;
+  padding: 10px 20px; /* Padding for spacing */
+  border-radius: 5px; /* Rounded corners */
+  font-weight: bold;
+  font-size: 20px;
+  text-align: center;
+  text-transform: uppercase; /* Uppercase text */
+  letter-spacing: 2px;
+}
+
+
+.images{
+  float: left;
+}
+@keyframes glisse {
+  0% {
+    transform: translate(0);
+  }
+  10% {
+    transform: translate(0);
+  }
+  20% {
+    transform: translate(-500px);
+  }
+  30% {
+    transform: translate(-500px);
+  }
+  40% {
+    transform: translate(-1000px);
+  }
+  50% {
+    transform: translate(-1000px);
+  }
+  60% {
+    transform: translate(-1500px);
+  }
+  70% {
+    transform: translate(-1500px);
+  }
+  80% {
+    transform: translate(-2000px);
+  }
+  90% {
+    transform: translate(-2000px);
+  }
+  100% {
+    transform: translate(0);
+  }
+}
+.img{
+  width: 115px;
+  animation: mylogo 10s infinite linear;
+  position: absolute;
+  top: 70px;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
+@keyframes mylogo {
+  0%{
+    transform: translate(-50%,-50%) rotate(0deg);
+  }
+  100%{
+    transform: translate(-50%,-50%) rotate(360deg);
+  }
+}
+.main{
+  display: grid;
+  grid-template-rows: 50px,400px, 50px,400px;
+}
+.main1{
+  margin-top: 0px;
+  display: grid;
+  gap: 8px;
+  grid-template-columns: repeat(auto-fit ,minmax(200px,1fr));
+  justify-content: center;
+  align-items: center;
+}
+.rooms-container {
+  display: flex;
+  flex-direction: column; /* Arrange items in a column */
+  align-items: center; /* Center items horizontally */
+  justify-content: center; /* Center items vertically */
+  padding: 20px; /* Padding for spacing */
+  margin: 10px; /* Margin for spacing around the container */
+  background-color: #f9f9f9; /* Light gray background color */
+  border-radius: 10px; /* Rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Subtle shadow for depth */
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out; /* Smooth transition for transform and box-shadow */
+}
+
+
+.images2{
+  max-width: 100%;
+  height: auto;
+  border-radius: 5px; /* Rounded corners */
+}
+.conference-room {
+  font-size: 18px; /* Font size */
+  font-weight: bold; /* Bold text */
+  color: #333; /* Dark gray color */
+  margin-top: 10px; /* Margin at the top */
+  margin-bottom: 10px; /* Margin at the bottom */
+  text-align: center; /* Center the text */
+  text-transform: uppercase; /* Uppercase text */
+  letter-spacing: 1px; /* Spacing between letters */
+  
+}
+.room-description{
+  width: 99%;
+  height: 50px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit ,minmax(40px,1fr));
+  justify-content: center;
+  align-items: center;
+  /*box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.15);*/
+  position: relative;
+  padding: 10px; /* Padding for spacing */
+  background-color: #f9f9f9; /* Light gray background color */
+  border-radius: 5px; /* Rounded corners */
+   
+}
+.select-button {
+  display: block;
+  width: 100%; /* Full width */
+  padding: 10px; /* Padding for spacing */
+  font-size: 16px; /* Font size */
+  font-weight: bold; /* Bold text */
+  color: #333; /* Text color */
+  background-color: #fff; /* Background color */
+  border: 1px solid #ddd; /* Border color */
+  border-radius: 5px; /* Rounded corners */
+  cursor: pointer; /* Pointer cursor on hover */
+  transition: border-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out; /* Smooth transition for border color and box shadow */
+}
+
+.select-button:hover {
+  border-color: #007bff; /* Blue border color on hover */
+}
+
+.select-button:focus {
+  outline: none; /* Remove default focus outline */
+  box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.5); /* Add custom focus outline with blue shadow */
+}
+
+.select-button option {
+  font-weight: normal; /* Normal text weight for options */
+  color: #333; /* Text color for options */
+}
+.room-type {
+  font-size: 18px; /* Font size */
+  font-weight: bold; /* Bold text */
+  color: #333; /* Dark gray color */
+  margin-top: 10px; /* Margin at the top */
+  margin-bottom: 10px; /* Margin at the bottom */
+  text-align: center; /* Center the text */
+  text-transform: uppercase; /* Uppercase text */
+  letter-spacing: 1px; /* Spacing between letters */
+}
+
+
+.book-now-button {
+  display: inline-block;
+  padding: 10px 20px;
+  margin: 10px 0;
+  background-color: #007bff; /* Blue background color */
+  color: white; /* White text color */
+  font-size: 16px; /* Font size */
+  font-weight: bold; /* Bold text */
+  text-align: center; /* Center text */
+  border: none; /* Remove border */
+  border-radius: 5px; /* Rounded corners */
+  cursor: pointer; /* Pointer cursor on hover */
+  transition: background-color 0.3s ease-in-out, transform 0.2s ease-in-out; /* Smooth transition for background color and transform */
+}
+
+.book-now-button:hover {
+  background-color: #0056b3; /* Darker blue on hover */
+  transform: scale(1.05); /* Slightly enlarge the button on hover */
+}
+
+.book-now-button:active {
+  background-color: #004494; /* Even darker blue when active */
+  transform: scale(1); /* Reset the scale when active */
+}
+
+.book-now-button:focus {
+  outline: none; /* Remove default focus outline */
+  box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.5); /* Add custom focus outline */
+}
+.price {
+  font-size: 20px; /* Font size */
+  font-weight: bold; /* Bold text */
+  color: #ff5733; /* Orange color */
+  margin-top: 25px; /* Margin at the top */
+  margin-bottom: 10px; /* Margin at the bottom */
+  text-align: center; /* Center the text */
+}
+
+.room-description2{
+  width: 100%;
+  height: 50px;
+  display: grid;
+  grid-template-columns: repeat(3 ,1fr);
+  align-items: center;
+  position: relative;
+  
+}
+.description2{
+ display: grid;
+ justify-content: start;
+ width: 180px;
+ margin-left: 5px;
+ color: brown;
+}
+
+.added-to-cart{
+  position: absolute;
+  display: flex;
+  right: 0;
+  top: 40px;
+  align-items: center;
+  z-index: 200;
+  font-weight: bold;
+  opacity: 0;
+  /*color: rgb(6, 82, 82);*/
+  color: rgb(6, 82, 82);
+  background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent background */
+  padding: 10px 20px; /* Padding for spacing */
+  border-radius: 5px; /* Rounded corners */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+  transition: opacity 0.3s ease-in-out;
+}
+.added{
+  opacity: 1;
+}
+.extra {
+  padding: 10px; /* Padding for spacing */
+  color: #58ffdb; /* Text color */
+  /*background-color: brown; /* Background color */
+  margin-bottom: 10px; /* Margin at the bottom */
+  display: flex; /* Flexbox layout */
+  justify-content: center; /* Center content horizontally */
+  align-items: center; /* Center content vertically */
+  border-radius: 5px; /* Rounded corners */
+  width: auto; /* Automatic width */
+  height: auto; /* Automatic height */
+}
+
+.extra-info {
+  display: inline-block;
+  padding: 10px 20px; /* Padding for spacing */
+  font-size: 16px; /* Font size */
+  font-weight: bold; /* Bold text */
+  color: #007bff; /* Blue text color */
+  text-decoration: none; /* Remove underline */
+  border: 2px solid #007bff; /* Blue border */
+  border-radius: 5px; /* Rounded corners */
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out; /* Smooth transition for background color and text color */
+}
+
+.extra-info:hover {
+  background-color: #007bff; /* Blue background color on hover */
+  color: white; /* White text color on hover */
+  text-decoration: underline; /* Underline text on hover */
+}
+
+.extra-info:active {
+  background-color: #0056b3; /* Darker blue background color when active */
+  color: white; /* White text color when active */
+}
+
+.bedroom{
+  color: white;
+  display: grid;
+  margin-left: 5px;
+  margin-top: 10px;
+  justify-content: center;
+}
+.right2,.right1{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  margin: 10px;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  background-color: #f9f9f9;
+
+}
+.right2:hover{
+  background-color: rgb(235, 201, 181);
+  cursor: pointer;
+}
+.right1:hover{
+  background-color: rgb(235, 201, 181);
+  cursor: pointer;
+}
+.footer {
+  background-color: #333; /* Dark background color */
+  color: #fff; /* White text color */
+  padding: 20px; /* Padding for spacing */
+  display: flex;
+  justify-content: space-between; /* Space between footer sections */
+  align-items: center; /* Center items vertically */
+  flex-wrap: wrap; /* Allow items to wrap on smaller screens */
+}
+
+.footer1 {
+  flex: 1; /* Allow the section to grow and fill available space */
+  margin: 10px; /* Margin for spacing */
+}
+
+.footer-title {
+  font-size: 18px; /* Font size for title */
+  font-weight: bold; /* Bold text */
+  margin-bottom: 10px; /* Margin below title */
+}
+
+.footer-text {
+  font-size: 14px; /* Font size for text */
+  margin: 5px 0; /* Margin for spacing */
+}
+
+.footer a {
+  color: #fff; /* White text color for links */
+  text-decoration: none; /* Remove underline from links */
+}
+
+.footer a:hover {
+  text-decoration: underline; /* Underline links on hover */
+}
